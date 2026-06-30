@@ -1,0 +1,26 @@
+---
+import '../index.css';
+const { frontmatter } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{frontmatter.title}</title>
+</head>
+<body class="bg-[#0D1117] text-[#C9D1D9] font-mono p-6 md:p-12 max-w-4xl mx-auto">
+    
+    <nav class="mb-12 border-b border-[#30363D] pb-4">
+        <a href="/" class="text-[#58A6FF] hover:text-[#79C0FF] transition-colors decoration-none">
+            &lt; cd ~/home
+        </a>
+    </nav>
+
+    <main class="prose prose-invert prose-pre:bg-[#161B22] prose-pre:border prose-pre:border-[#30363D] max-w-none">
+        <slot />
+    </main>
+
+</body>
+</html>

@@ -187,16 +187,11 @@ export const siteConfig = {
   ],
   projects: [
     {
-      name: 'Project.OVERWATCH',
-      category: 'Red Team Operation',
-      desc: 'Anonymized execution of a full-scale external and internal penetration test for a Fortune 500 financial institution. Discovered and remediated a zero-day in their custom middleware.',
-      tech: ['Cobalt Strike', 'Python', 'Ghidra'],
-    },
-    {
-      name: 'ZeroTrust.ARCH',
-      category: 'Infra Design',
-      desc: 'Architected a complete identity-aware zero-trust network for a distributed healthcare provider, enforcing granular access controls across multi-cloud environments.',
-      tech: ['AWS', 'Terraform', 'Okta'],
+      name: 'Aegis.HR',
+      category: 'AI Security Pipeline',
+      desc: 'Zero-trust LLM evaluation pipeline mitigating OWASP Top 10 vulnerabilities. Features dual-model adversarial sanitization and automated PII redaction.',
+      tech: ['LangChain', 'Python', 'Presidio'],
+      url: "projects/aegis-hr",
     },
   ],
   testimonials: [
