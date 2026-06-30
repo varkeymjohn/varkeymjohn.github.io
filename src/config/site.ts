@@ -187,11 +187,11 @@ export const siteConfig = {
   ],
   projects: [
     {
-      name: 'Aegis.HR',
+      name: 'Secure AI HR',
       category: 'AI Security Pipeline',
-      desc: 'Zero-trust LLM evaluation pipeline mitigating OWASP Top 10 vulnerabilities. Features dual-model adversarial sanitization and automated PII redaction.',
-      tech: ['LangChain', 'Python', 'Presidio'],
-      url: "projects/aegis-hr",
+      desc: 'Zero-trust LLM evaluation pipeline mitigating OWASP Top 10 vulnerabilities.',
+      tech: ['LangChain', 'Python'],
+      url: "projects/secure-AI-HR",
     },
   ],
   testimonials: [
