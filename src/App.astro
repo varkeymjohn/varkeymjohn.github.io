@@ -28,25 +28,23 @@ const {
       <span class="font-bold tracking-tight">{brand.logoText}</span>
     </a>
     
-    <!-- Right side container grouping navigation and download link -->
-    <div class="flex items-center gap-6">
-      <nav aria-label="Primary navigation" class="hidden md:flex gap-6 font-mono text-sm shadow-sm backdrop-blur-none">
-        {navLinks.map((item) => (
-          <a href={item.href} class="text-gray-300 hover:text-[#00FF00] transition-colors drop-shadow-md">
-            <span class="text-gray-500 mr-1" aria-hidden="true">~/</span>{item.label.toLowerCase()}
-          </a>
-        ))}
-      </nav>
+    <!-- Desktop navigation with your matching resume link -->
+    <nav aria-label="Primary navigation" class="hidden md:flex gap-6 font-mono text-sm shadow-sm backdrop-blur-none">
+      {navLinks.map((item) => (
+        <a href={item.href} class="text-gray-300 hover:text-[#00FF00] transition-colors drop-shadow-md">
+          <span class="text-gray-500 mr-1" aria-hidden="true">~/</span>{item.label.toLowerCase()}
+        </a>
+      ))}
 
-      <!-- TERMINAL-STYLE RESUME DOWNLOAD LINK -->
+      <!-- NATIVE STYLED RESUME LINK -->
       <a 
         href="/varkey_m_john_resume.pdf" 
-        download="Varkey_M_John_resume.pdf"
-        class="cursor-pointer font-mono text-sm px-3 py-1.5 border border-[#00FF00]/40 text-[#00FF00] bg-[#00FF00]/5 hover:bg-[#00FF00]/10 transition-colors flex items-center gap-1.5"
+        download="Varkey_M_John_resume.pdf" 
+        class="text-gray-300 hover:text-[#00FF00] transition-colors drop-shadow-md cursor-pointer"
       >
-        <span class="text-xs">[↓]</span> resume
+        <span class="text-gray-500 mr-1" aria-hidden="true">~/</span>resume.pdf
       </a>
-    </div>
+    </nav>
 
     <div class="md:hidden">
       <button type="button" aria-label="Open menu" aria-controls="mobile-menu" aria-expanded="false" data-mobile-menu-button class="flex h-10 w-10 items-center justify-center border border-gray-800 text-[#00FF00] transition-colors hover:border-[#00FF00]/50 hover:bg-[#00FF00]/10">
