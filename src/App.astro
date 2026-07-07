@@ -235,7 +235,7 @@ const {
           <form class="space-y-6" aria-describedby="contact-help">
             <div>
               <label for="target-email" class="block font-mono text-xs text-gray-300 mb-2">{contact.emailLabel}</label>
-              <input id="target-email" name="email" type="email" autocomplete="email" required class="w-full bg-[#0D1117] border border-gray-800 p-3 font-mono text-sm text-gray-200 focus:outline-none focus:border-[#00FF00]/50 transition-colors" placeholder={contact.emailPlaceholder} />
+              <input id="target-email" name="email" type="email" autocomplete="email" value={contact.emailPlaceholder} disabled class="w-full bg-[#0D1117] border border-gray-800 p-3 font-mono text-sm text-gray-400 focus:outline-none transition-colors cursor-not-allowed opacity-70" />
             </div>
             <div>
               <label for="payload" class="block font-mono text-xs text-gray-300 mb-2">{contact.messageLabel}</label>
