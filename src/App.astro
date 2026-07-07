@@ -264,6 +264,24 @@ const {
 
 <script is:inline>
   (() => {
+    // === EXISTING CODE: CONTACT FORM MAILTO HOOK ===
+    const contactForm = document.querySelector('#contact font-mono, #contact form');
+    if (contactForm) {
+      contactForm.addEventListener('submit', (e) => {
+        e.preventDefault(); // Stop page reload
+
+        const textarea = contactForm.querySelector('textarea[name="message"]');
+        const payloadText = textarea ? textarea.value : '';
+        
+        const targetEmail = "varkey.research@gmail.com";
+        const subject = encodeURIComponent("Project Scope Details / Inquiry");
+        const body = encodeURIComponent(payloadText);
+        
+        window.location.href = `mailto:${targetEmail}?subject=${subject}&body=${body}`;
+      });
+    }
+
+    // === EXISTING CODE: TYPEWRITER & COUNTERS ANIMATION ===
     const typewriter = document.querySelector('[data-terminal-typewriter]');
     const motionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
 
