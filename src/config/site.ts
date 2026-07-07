@@ -1,7 +1,7 @@
 export const siteConfig = {
   brand: {
     name: 'Varkey M John',
-    logoText: './Varkey M John',
+    logoText: './Varkey_M_John',
   },
   seo: {
     title: 'Varkey M John - Portfolio',
@@ -57,7 +57,7 @@ export const siteConfig = {
       stats: [
         { value: 10, suffix: '+', label: 'red team engagements' },
         { value: 7, suffix: '', label: 'papers published' },
-        { value: 1, suffix: '', label: 'industry certification' },
+        { value: 1, suffix: '', label: 'certifications' },
       ],
     },
   },
