@@ -33,7 +33,7 @@ export const siteConfig = {
   ],
   contact: {
     email: 'varkey.research@gmail.com',
-    formHelp: 'Click to send mail.',
+    formHelp: '',
     emailLabel: 'TARGET_EMAIL',
     emailPlaceholder: 'varkey.research@gmail.com',
     messageLabel: 'PAYLOAD',
