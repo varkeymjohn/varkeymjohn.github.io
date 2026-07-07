@@ -23,10 +23,13 @@ const {
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
   <header class="fixed top-0 left-0 right-0 z-50 bg-[#0D1117] border-b border-gray-800 reveal-static" data-reveal style="--reveal-delay: 40ms">
-    <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-      <a href="/" class="site-logo flex items-center gap-2 text-[#00FF00] font-mono" aria-label={`${brand.name} home`}>
-        <span class="font-bold tracking-tight">{brand.logoText}</span>
-      </a>
+  <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+    <a href="/" class="site-logo flex items-center gap-2 text-[#00FF00] font-mono" aria-label={`${brand.name} home`}>
+      <span class="font-bold tracking-tight">{brand.logoText}</span>
+    </a>
+    
+    <!-- Right side container grouping navigation and download link -->
+    <div class="flex items-center gap-6">
       <nav aria-label="Primary navigation" class="hidden md:flex gap-6 font-mono text-sm shadow-sm backdrop-blur-none">
         {navLinks.map((item) => (
           <a href={item.href} class="text-gray-300 hover:text-[#00FF00] transition-colors drop-shadow-md">
@@ -34,13 +37,24 @@ const {
           </a>
         ))}
       </nav>
-      <div class="md:hidden">
-        <button type="button" aria-label="Open menu" aria-controls="mobile-menu" aria-expanded="false" data-mobile-menu-button class="flex h-10 w-10 items-center justify-center border border-gray-800 text-[#00FF00] transition-colors hover:border-[#00FF00]/50 hover:bg-[#00FF00]/10">
-          <MaterialIcon name="menu" class="text-2xl" aria-hidden="true" data-menu-icon />
-        </button>
-      </div>
+
+      <!-- TERMINAL-STYLE RESUME DOWNLOAD LINK -->
+      <a 
+        href="/varkey-m-john-resume.pdf" 
+        download="Varkey_M_John_resume.pdf"
+        class="cursor-pointer font-mono text-sm px-3 py-1.5 border border-[#00FF00]/40 text-[#00FF00] bg-[#00FF00]/5 hover:bg-[#00FF00]/10 transition-colors flex items-center gap-1.5"
+      >
+        <span class="text-xs">[↓]</span> resume
+      </a>
     </div>
-  </header>
+
+    <div class="md:hidden">
+      <button type="button" aria-label="Open menu" aria-controls="mobile-menu" aria-expanded="false" data-mobile-menu-button class="flex h-10 w-10 items-center justify-center border border-gray-800 text-[#00FF00] transition-colors hover:border-[#00FF00]/50 hover:bg-[#00FF00]/10">
+        <MaterialIcon name="menu" class="text-2xl" aria-hidden="true" data-menu-icon />
+      </button>
+    </div>
+  </div>
+</header>
 
   <nav id="mobile-menu" aria-label="Mobile navigation" data-mobile-menu class="mobile-menu-panel fixed inset-x-0 bottom-0 top-16 z-40 hidden border-t border-gray-800 px-6 py-6 font-mono text-sm md:hidden">
     <div class="mx-auto flex h-full max-w-7xl flex-col justify-between">
