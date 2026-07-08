@@ -32,10 +32,10 @@ export const siteConfig = {
     { label: 'Contact', href: '#contact' },
   ],
   contact: {
-    email: 'varkey.research@gmail.com',
+    email: 'vjohn8@gatech.edu',
     formHelp: '',
     emailLabel: 'TARGET_EMAIL',
-    emailPlaceholder: 'varkey.research@gmail.com',
+    emailPlaceholder: 'vjohn8@gatech.edu',
     messageLabel: 'PAYLOAD',
     messagePlaceholder: 'Enter scope details...',
     submitLabel: 'Execute Transmit',
