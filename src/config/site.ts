@@ -56,7 +56,7 @@ export const siteConfig = {
     proof: {
       stats: [
         { value: 10, suffix: '+', label: 'red team engagements' },
-        { value: 7, suffix: '', label: 'papers published' },
+        { value: 6, suffix: '', label: 'papers published' },
         { value: 1, suffix: '', label: 'certifications' },
       ],
     },
