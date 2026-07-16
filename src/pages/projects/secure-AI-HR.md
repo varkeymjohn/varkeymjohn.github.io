@@ -83,52 +83,52 @@ Resumes are prime vectors for **Indirect Prompt Injection (LLM01)**. Candidates 
 </style>
 
 <div class="owasp-grid" id="owasp-vulns">
-  <a href="/projects/secure-AI-HR/vulnerabilities/llm01" class="owasp-card" style="--delay: 0ms">
+  <a href="/projects/secure-AI-HR/llm01" class="owasp-card" style="--delay: 0ms">
     <span class="owasp-id">LLM01:2023</span>
     <p class="owasp-title">Prompt Injection</p>
   </a>
   
-  <a href="/projects/secure-AI-HR/vulnerabilities/llm02" class="owasp-card" style="--delay: 100ms">
+  <a href="/projects/secure-AI-HR/llm02" class="owasp-card" style="--delay: 100ms">
     <span class="owasp-id">LLM02:2023</span>
     <p class="owasp-title">Insecure Output Handling</p>
   </a>
 
-  <a href="/projects/secure-AI-HR/vulnerabilities/llm03" class="owasp-card" style="--delay: 200ms">
+  <a href="/projects/secure-AI-HR/llm03" class="owasp-card" style="--delay: 200ms">
     <span class="owasp-id">LLM03:2023</span>
     <p class="owasp-title">Training Data Poisoning</p>
   </a>
 
-  <a href="/projects/secure-AI-HR/vulnerabilities/llm04" class="owasp-card" style="--delay: 300ms">
+  <a href="/projects/secure-AI-HR/llm04" class="owasp-card" style="--delay: 300ms">
     <span class="owasp-id">LLM04:2023</span>
     <p class="owasp-title">Model Denial of Service</p>
   </a>
 
-  <a href="/projects/secure-AI-HR/vulnerabilities/llm05" class="owasp-card" style="--delay: 400ms">
+  <a href="/projects/secure-AI-HR/llm05" class="owasp-card" style="--delay: 400ms">
     <span class="owasp-id">LLM05:2023</span>
     <p class="owasp-title">Supply Chain Vulnerabilities</p>
   </a>
 
-  <a href="/projects/secure-AI-HR/vulnerabilities/llm06" class="owasp-card" style="--delay: 500ms">
+  <a href="/projects/secure-AI-HR/llm06" class="owasp-card" style="--delay: 500ms">
     <span class="owasp-id">LLM06:2023</span>
     <p class="owasp-title">Sensitive Information Disclosure</p>
   </a>
 
-  <a href="/projects/secure-AI-HR/vulnerabilities/llm07" class="owasp-card" style="--delay: 600ms">
+  <a href="/projects/secure-AI-HR/llm07" class="owasp-card" style="--delay: 600ms">
     <span class="owasp-id">LLM07:2023</span>
     <p class="owasp-title">Insecure Plugin Design</p>
   </a>
 
-  <a href="/projects/secure-AI-HR/vulnerabilities/llm08" class="owasp-card" style="--delay: 700ms">
+  <a href="/projects/secure-AI-HR/llm08" class="owasp-card" style="--delay: 700ms">
     <span class="owasp-id">LLM08:2023</span>
     <p class="owasp-title">Excessive Agency</p>
   </a>
 
-  <a href="/projects/secure-AI-HR/vulnerabilities/llm09" class="owasp-card" style="--delay: 800ms">
+  <a href="/projects/secure-AI-HR/llm09" class="owasp-card" style="--delay: 800ms">
     <span class="owasp-id">LLM09:2023</span>
     <p class="owasp-title">Overreliance</p>
   </a>
 
-  <a href="/projects/secure-AI-HR/vulnerabilities/llm10" class="owasp-card" style="--delay: 900ms">
+  <a href="/projects/secure-AI-HR/llm10" class="owasp-card" style="--delay: 900ms">
     <span class="owasp-id">LLM10:2023</span>
     <p class="owasp-title">Model Theft</p>
   </a>
