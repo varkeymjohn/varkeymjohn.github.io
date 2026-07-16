@@ -36,19 +36,36 @@ Resumes are prime vectors for **Indirect Prompt Injection (LLM01)**. Candidates 
     padding: 1.5rem;
     text-decoration: none;
     color: #c9d1d9;
-    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
     display: flex;
     flex-direction: column;
     
-    /* Flex sizing ensures normal rows fill out, but the final row centers without over-stretching */
-    flex: 1 1 250px;
-    max-width: 320px;
+    /* Locks the width to exactly 300px so all boxes match perfectly. 
+       The '1' allows shrinking on very tiny phones, but '0' prevents growing. */
+    flex: 0 1 300px;
+    
+    /* Animation initial state */
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s ease var(--delay, 0ms),
+                transform 0.7s cubic-bezier(0.16, 1, 0.3, 1) var(--delay, 0ms),
+                border-color 0.2s ease 0ms, 
+                box-shadow 0.2s ease 0ms;
   }
-  .owasp-card:hover {
-    transform: translateY(-4px) !important; /* !important ensures it overrides the data-reveal default transform */
+  
+  /* Triggered by the script below when scrolled into view */
+  .owasp-card.is-loaded {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .owasp-card.is-loaded:hover {
+    transform: translateY(-4px);
     border-color: #58a6ff;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    /* Instantly remove the load-in delay so the hover is snappy */
+    transition-delay: 0ms !important; 
   }
+
   .owasp-id {
     font-size: 0.85rem;
     font-family: monospace;
@@ -65,54 +82,80 @@ Resumes are prime vectors for **Indirect Prompt Injection (LLM01)**. Candidates 
   }
 </style>
 
-<div class="owasp-grid">
-  <a href="/vulnerabilities/llm01" class="owasp-card" data-reveal style="--reveal-delay: 0ms">
+<div class="owasp-grid" id="owasp-vulns">
+  <a href="/vulnerabilities/llm01" class="owasp-card" style="--delay: 0ms">
     <span class="owasp-id">LLM01:2023</span>
     <p class="owasp-title">Prompt Injection</p>
   </a>
   
-  <a href="/vulnerabilities/llm02" class="owasp-card" data-reveal style="--reveal-delay: 100ms">
+  <a href="/vulnerabilities/llm02" class="owasp-card" style="--delay: 100ms">
     <span class="owasp-id">LLM02:2023</span>
     <p class="owasp-title">Insecure Output Handling</p>
   </a>
 
-  <a href="/vulnerabilities/llm03" class="owasp-card" data-reveal style="--reveal-delay: 200ms">
+  <a href="/vulnerabilities/llm03" class="owasp-card" style="--delay: 200ms">
     <span class="owasp-id">LLM03:2023</span>
     <p class="owasp-title">Training Data Poisoning</p>
   </a>
 
-  <a href="/vulnerabilities/llm04" class="owasp-card" data-reveal style="--reveal-delay: 300ms">
+  <a href="/vulnerabilities/llm04" class="owasp-card" style="--delay: 300ms">
     <span class="owasp-id">LLM04:2023</span>
     <p class="owasp-title">Model Denial of Service</p>
   </a>
 
-  <a href="/vulnerabilities/llm05" class="owasp-card" data-reveal style="--reveal-delay: 400ms">
+  <a href="/vulnerabilities/llm05" class="owasp-card" style="--delay: 400ms">
     <span class="owasp-id">LLM05:2023</span>
     <p class="owasp-title">Supply Chain Vulnerabilities</p>
   </a>
 
-  <a href="/vulnerabilities/llm06" class="owasp-card" data-reveal style="--reveal-delay: 500ms">
+  <a href="/vulnerabilities/llm06" class="owasp-card" style="--delay: 500ms">
     <span class="owasp-id">LLM06:2023</span>
     <p class="owasp-title">Sensitive Information Disclosure</p>
   </a>
 
-  <a href="/vulnerabilities/llm07" class="owasp-card" data-reveal style="--reveal-delay: 600ms">
+  <a href="/vulnerabilities/llm07" class="owasp-card" style="--delay: 600ms">
     <span class="owasp-id">LLM07:2023</span>
     <p class="owasp-title">Insecure Plugin Design</p>
   </a>
 
-  <a href="/vulnerabilities/llm08" class="owasp-card" data-reveal style="--reveal-delay: 700ms">
+  <a href="/vulnerabilities/llm08" class="owasp-card" style="--delay: 700ms">
     <span class="owasp-id">LLM08:2023</span>
     <p class="owasp-title">Excessive Agency</p>
   </a>
 
-  <a href="/vulnerabilities/llm09" class="owasp-card" data-reveal style="--reveal-delay: 800ms">
+  <a href="/vulnerabilities/llm09" class="owasp-card" style="--delay: 800ms">
     <span class="owasp-id">LLM09:2023</span>
     <p class="owasp-title">Overreliance</p>
   </a>
 
-  <a href="/vulnerabilities/llm10" class="owasp-card" data-reveal style="--reveal-delay: 900ms">
+  <a href="/vulnerabilities/llm10" class="owasp-card" style="--delay: 900ms">
     <span class="owasp-id">LLM10:2023</span>
     <p class="owasp-title">Model Theft</p>
   </a>
 </div>
+
+<!-- Inline script guarantees execution inside Markdown pages -->
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', () => {
+    const cards = document.querySelectorAll('.owasp-card');
+    
+    // Check if user prefers reduced motion (accessibility)
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    
+    if (prefersReducedMotion || !('IntersectionObserver' in window)) {
+      cards.forEach(card => card.classList.add('is-loaded'));
+      return;
+    }
+
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-loaded');
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { rootMargin: '0px 0px -10% 0px' });
+
+    cards.forEach(card => observer.observe(card));
+  });
+</script>
