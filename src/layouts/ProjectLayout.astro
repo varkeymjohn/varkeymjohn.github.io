@@ -1,6 +1,10 @@
 ---
 import '../index.css';
 const { frontmatter } = Astro.props;
+
+// Set default values so other project pages still say "< cd ~/home"
+const breadcrumbText = frontmatter.breadcrumb || "< cd ~/home";
+const breadcrumbLink = frontmatter.breadcrumbLink || "/";
 ---
 
 <!DOCTYPE html>
@@ -13,8 +17,8 @@ const { frontmatter } = Astro.props;
 <body class="bg-[#0D1117] text-[#C9D1D9] font-mono p-6 md:p-12 max-w-4xl mx-auto">
     
     <nav class="mb-12 border-b border-[#30363D] pb-4">
-        <a href="/" class="text-[#58A6FF] hover:text-[#79C0FF] transition-colors decoration-none">
-            &lt; cd ~/home
+        <a href={breadcrumbLink} class="text-[#58A6FF] hover:text-[#79C0FF] transition-colors decoration-none">
+            {breadcrumbText}
         </a>
     </nav>
 

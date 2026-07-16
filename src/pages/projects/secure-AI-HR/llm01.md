@@ -1,6 +1,8 @@
 ---
 layout: ../../../layouts/ProjectLayout.astro
 title: "LLM01: Prompt Injection"
+breadcrumb: "< cd ~/home/secure-AI-HR"
+breadcrumbLink: "/projects/secure-AI-HR/"
 ---
 
 # LLM01: Prompt Injection
