@@ -39,10 +39,17 @@ Prompt Injection Vulnerabilities occur when an attacker uses crafted prompts to 
     color: #c9d1d9;
     background: rgba(255, 255, 255, 0.05);
   }
-  .tab-btn.active {
-    color: #58a6ff;
-    border-bottom: 2px solid #58a6ff;
+  
+  /* Custom Active Colors for Attack and Defense */
+  #btn-attack.active {
+    color: #ff7b72;
+    border-bottom: 2px solid #ff7b72;
   }
+  #btn-defense.active {
+    color: #3fb950;
+    border-bottom: 2px solid #3fb950;
+  }
+
   .tab-content {
     display: none;
     animation: fadeIn 0.4s ease;
@@ -120,8 +127,8 @@ Prompt Injection Vulnerabilities occur when an attacker uses crafted prompts to 
 
 <div class="tab-container">
   <div class="tab-buttons">
-    <button class="tab-btn active" onclick="switchTab(event, 'attack')">Attack</button>
-    <button class="tab-btn" onclick="switchTab(event, 'defense')">Defense</button>
+    <button id="btn-attack" class="tab-btn active" onclick="switchTab(event, 'attack')">Attack</button>
+    <button id="btn-defense" class="tab-btn" onclick="switchTab(event, 'defense')">Defense</button>
   </div>
 
   <div id="attack-tab" class="tab-content active">
