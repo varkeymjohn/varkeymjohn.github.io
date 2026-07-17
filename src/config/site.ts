@@ -64,9 +64,6 @@ export const siteConfig = {
     services: {
       heading: 'sudo list-services',
     },
-    certifications: {
-      heading: 'cat /etc/certs',
-    },
     toolstack: {
       heading: 'ls -la /opt/tools',
       terminalTitle: '/opt/tools - secure inventory',
@@ -80,6 +77,9 @@ export const siteConfig = {
     },
     projects: {
       heading: 'cat /var/log/projects',
+    },
+    certifications: {
+      heading: 'cat /etc/certs',
     },
     contact: {
       heading: './establish-link',
