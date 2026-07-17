@@ -98,7 +98,7 @@ export const siteConfig = {
     },
     {
       title: 'Vulnerability Assessment',
-      desc: 'Systematic identification, quantification, and prioritization of infrastructure weaknesses. Penetration testing and risk remediation.',
+      desc: 'Systematic identification, quantification, and prioritization of infrastructure weaknesses.',
       icon: 'shield',
     },
     {
