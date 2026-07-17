@@ -103,7 +103,7 @@ export const siteConfig = {
     },
     {
       title: 'Infrastructure Security',
-      desc: 'Zero-trust architecture implementation, network segmentation, and secure CI/CD pipeline integration.',
+      desc: 'Securing underlying networks and systems by implementing zero-trust frameworks, strict access controls, and comprehensive environment hardening.',
       icon: 'memory',
     },
   ],
