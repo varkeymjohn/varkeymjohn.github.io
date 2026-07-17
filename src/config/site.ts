@@ -9,7 +9,7 @@ export const siteConfig = {
       'A dark terminal-inspired Astro theme for security consultants, penetration testers, and incident response specialists.',
     author: 'Varkey M John',
     keywords:
-      'security consultant portfolio, penetration testing, incident response, cybersecurity website',
+      'security consultant portfolio, penetration testing, cybersecurity website',
     siteName: 'Varkey M John',
     themeColor: '#0D1117',
     twitterCard: 'summary',
@@ -19,8 +19,8 @@ export const siteConfig = {
     areaServed: 'Worldwide',
     serviceType: [
       'Penetration Testing',
-      'Incident Response',
-      'Security Auditing',
+      'Security Engineering',
+      'Vulnerability Assessment',
       'Infrastructure Security',
     ],
   },
@@ -28,7 +28,6 @@ export const siteConfig = {
     { label: 'Services', href: '#services' },
     { label: 'Certs', href: '#certifications' },
     { label: 'Projects', href: '#projects' },
-    { label: 'Testimonials', href: '#redacted-testimonials' },
     { label: 'Contact', href: '#contact' },
   ],
   contact: {
@@ -52,7 +51,7 @@ export const siteConfig = {
     description:
       'I identify vulnerabilities before adversaries do. Specializing in penetration testing, security engineering, and securing mission-critical infrastructure.',
     primaryCta: { label: 'Initiate Contact', href: '#contact' },
-    secondaryCta: { label: 'View Operations', href: '#services' },
+    secondaryCta: { label: 'View Projects', href: '#projects' },
     proof: {
       stats: [
         { value: 10, suffix: '+', label: 'red team engagements' },
@@ -64,9 +63,6 @@ export const siteConfig = {
   sections: {
     services: {
       heading: 'sudo list-services',
-    },
-    methodology: {
-      heading: 'cat /etc/methodology',
     },
     certifications: {
       heading: 'cat /etc/certs',
@@ -85,11 +81,6 @@ export const siteConfig = {
     projects: {
       heading: 'cat /var/log/projects',
     },
-    testimonials: {
-      heading: '# REDACTED-TESTIMONIALS',
-      eyebrow: 'client statements // identities withheld',
-      note: 'All quotes are anonymized for operational security and NDA compliance.',
-    },
     contact: {
       heading: './establish-link',
     },
@@ -101,46 +92,19 @@ export const siteConfig = {
       icon: 'lock',
     },
     {
-      title: 'Incident Response',
-      desc: 'Rapid containment, eradication, and recovery from active breaches. Digital forensics and malware analysis.',
+      title: 'Security Engineering',
+      desc: 'Proactive design, deployment, and optimization of defensive architectures.',
       icon: 'dns',
     },
     {
-      title: 'Security Auditing',
-      desc: 'Code reviews, cloud infrastructure assessments, and compliance checks (SOC2, HIPAA) for robust posture.',
+      title: 'Vulnerability Assessment',
+      desc: 'Systematic identification, quantification, and prioritization of infrastructure weaknesses. Penetration testing and risk remediation.',
       icon: 'shield',
     },
     {
       title: 'Infrastructure Security',
       desc: 'Zero-trust architecture implementation, network segmentation, and secure CI/CD pipeline integration.',
       icon: 'memory',
-    },
-  ],
-  methodology: [
-    {
-      title: 'Vulnerability Analysis',
-      desc: 'Identify flaws, misconfigurations, and outdated components before adversaries can exploit them.',
-      icon: 'target',
-    },
-    {
-      title: 'Exploitation',
-      desc: 'Execute proof-of-concept attacks safely to demonstrate real-world risk without disrupting service.',
-      icon: 'code_blocks',
-    },
-    {
-      title: 'Reporting & Remediation',
-      desc: 'Deliver actionable remediation guidance, prioritized for business impact and recovery speed.',
-      icon: 'check_circle',
-    },
-  ],
-  certifications: [
-    {
-      name: 'CAISP',
-      title: 'Certified AI Security Professional',
-      issuer: 'Practical DevSecOps',
-      file: 'caisp.cert',
-      issued: '2026-06-17',
-      status: 'active',
     },
   ],
   toolCategories: [
@@ -154,7 +118,7 @@ export const siteConfig = {
       name: 'scripting-dev',
       owner: 'operator',
       size: '34K',
-      tools: ['Python', 'Bash', 'Go', 'Rust', 'PowerShell'],
+      tools: ['Python', 'Bash'],
     },
   ],
   projects: [
@@ -166,27 +130,14 @@ export const siteConfig = {
       url: "projects/secure-AI-HR",
     },
   ],
-  testimonials: [
+  certifications: [
     {
-      quote:
-        'Their assessment translated technical risk into board-level decisions without losing the evidence our engineering team needed to fix issues fast.',
-      attribution: 'Fortune 500 CISO',
-      sector: 'Financial Sector',
-      rating: 5,
-    },
-    {
-      quote:
-        'The incident response support was precise, calm, and deeply practical. We moved from containment to recovery with a clear chain of custody.',
-      attribution: 'VP of Infrastructure',
-      sector: 'Healthcare Platform',
-      rating: 5,
-    },
-    {
-      quote:
-        'The red-team engagement exposed attack paths our internal controls had missed and left us with remediation steps we could actually execute.',
-      attribution: 'Director of Security Engineering',
-      sector: 'SaaS Enterprise',
-      rating: 5,
+      name: 'CAISP',
+      title: 'Certified AI Security Professional',
+      issuer: 'Practical DevSecOps',
+      file: 'caisp.cert',
+      issued: '2026-06-17',
+      status: 'active',
     },
   ],
   footer: {
