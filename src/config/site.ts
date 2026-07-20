@@ -166,6 +166,22 @@ export const siteConfig = {
       status: 'active',
     },
   ],
+  testimonials: [
+    {
+      quote:
+        'Their assessment translated technical risk into board-level decisions without losing the evidence our engineering team needed to fix issues fast.',
+      attribution: 'Fortune 500 CISO',
+      sector: 'Financial Sector',
+      rating: 5,
+    },
+    {
+      quote:
+        'The incident response support was precise, calm, and deeply practical. We moved from containment to recovery with a clear chain of custody.',
+      attribution: 'VP of Infrastructure',
+      sector: 'Healthcare Platform',
+      rating: 5,
+    },
+  ],
   footer: {
     status: 'CONNECTION SECURE',
   },
