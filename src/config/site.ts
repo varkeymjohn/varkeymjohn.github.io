@@ -27,6 +27,7 @@ export const siteConfig = {
   navLinks: [
     { label: 'Services', href: '#services' },
     { label: 'Projects', href: '#projects' },
+    { label: 'Testimonials', href: '#redacted-testimonials' },
     { label: 'Certs', href: '#certifications' },
     { label: 'Contact', href: '#contact' },
   ],
@@ -64,6 +65,9 @@ export const siteConfig = {
     services: {
       heading: 'sudo list-services',
     },
+    methodology: {
+      heading: 'cat /etc/methodology',
+    },
     toolstack: {
       heading: 'ls -la /opt/tools',
       terminalTitle: '/opt/tools - secure inventory',
@@ -77,6 +81,11 @@ export const siteConfig = {
     },
     projects: {
       heading: 'cat /var/log/projects',
+    },
+    testimonials: {
+      heading: '# REDACTED-TESTIMONIALS',
+      eyebrow: 'client statements // identities withheld',
+      note: 'All quotes are anonymized for operational security and NDA compliance.',
     },
     certifications: {
       heading: 'cat /etc/certs',
@@ -105,6 +114,23 @@ export const siteConfig = {
       title: 'Infrastructure Security',
       desc: 'Securing underlying networks and systems by implementing zero-trust frameworks, strict access controls, and comprehensive environment hardening.',
       icon: 'memory',
+    },
+  ],
+  methodology: [
+    {
+      title: 'Vulnerability Analysis',
+      desc: 'Identify flaws, misconfigurations, and outdated components before adversaries can exploit them.',
+      icon: 'target',
+    },
+    {
+      title: 'Exploitation',
+      desc: 'Execute proof-of-concept attacks safely to demonstrate real-world risk without disrupting service.',
+      icon: 'code_blocks',
+    },
+    {
+      title: 'Reporting & Remediation',
+      desc: 'Deliver actionable remediation guidance, prioritized for business impact and recovery speed.',
+      icon: 'check_circle',
     },
   ],
   toolCategories: [

@@ -1,5 +1,7 @@
 ---
 import Certifications from './components/Certifications.astro';
+import Methodology from './components/Methodology.astro';
+import Testimonials from './components/Testimonials.astro';
 import Toolstack from './components/Toolstack.astro';
 import MaterialIcon from './components/MaterialIcon.astro';
 import { siteConfig } from './config/site';
@@ -230,8 +232,9 @@ const {
         
       </div>
     </section>
-
+    <Methodology />
     <Certifications />
+    <Testimonials />
     <section id="contact" aria-labelledby="contact-title" class="scroll-mt-32 pb-20">
       <div class="max-w-2xl">
         <div class="flex items-center gap-4 mb-12 reveal-heading" data-reveal="left">
