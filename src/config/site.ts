@@ -83,9 +83,9 @@ export const siteConfig = {
       heading: 'cat /var/log/projects',
     },
     testimonials: {
-      heading: '# REDACTED-TESTIMONIALS',
-      eyebrow: 'client statements // identities withheld',
-      note: 'All quotes are anonymized for operational security and NDA compliance.',
+      heading: '# EDUCATION',
+      eyebrow: 'ACADEMIC RECORDS // VERIFIED CREDENTIALS',
+      note: 'Official transcripts and certification hashes are available upon authorized request.',
     },
     certifications: {
       heading: 'cat /etc/certs',
