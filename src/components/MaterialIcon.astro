@@ -7,7 +7,7 @@ const { name, class: className = '', ...attrs } = Astro.props;
 
 <span 
   class={className} 
-  style="font-family: 'Material Symbols Outlined' !important; font-size: 24px !important; font-variation-settings: 'wght' 200, 'opsz' 24 !important; text-transform: none !important; letter-spacing: normal !important; white-space: nowrap !important; word-wrap: normal !important; display: inline-block;" 
+  style="font-family: 'Material Symbols Outlined' !important; font-size: inherit !important; font-variation-settings: 'wght' 200, 'opsz' 24 !important; text-transform: none !important; letter-spacing: normal !important; white-space: nowrap !important; word-wrap: normal !important; display: inline-block; vertical-align: bottom;" 
   {...attrs}
 >
   {name}
