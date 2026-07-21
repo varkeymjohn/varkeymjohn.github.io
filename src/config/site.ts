@@ -129,7 +129,7 @@ export const siteConfig = {
     },
     {
       title: 'Texas Instruments',
-      desc: 'Power electronics intern with experience designing analog and digital architectures for power management ICs, including ultra-low-voltage boost converters and SystemVerilog behavioral models.',
+      desc: 'Power electronics intern with experience designing analog and digital architectures for power management ICs.',
       icon: 'check_circle',
     },
   ],
@@ -169,21 +169,21 @@ export const siteConfig = {
   testimonials: [
     {
       quote:
-        'Ph.D. & M.S. Electrical and Computer Engineering',
+        'Ph.D. & M.S. <br />Electrical and Computer Engineering',
       attribution: 'Georgia Tech',
       sector: 'CGPA: 3.83/4',
       rating: 5,
     },
     {
       quote:
-        'M.Tech. (Res.) Electrical Communication Engineering',
+        'M.Tech. (Res.) <br />Electrical Communication Engineering',
       attribution: 'IISc. Bangalore',
       sector: 'CGPA: 8.3/10',
       rating: 5,
     },
     {
       quote:
-        'B.E. (Hons.) Electrical and Electronics Engineering',
+        'B.E. (Hons.) <br />Electrical and Electronics Engineering',
       attribution: 'BITS Pilani',
       sector: 'CGPA: 8.01/10',
       rating: 5,
