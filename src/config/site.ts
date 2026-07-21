@@ -66,7 +66,7 @@ export const siteConfig = {
       heading: 'sudo list-services',
     },
     methodology: {
-      heading: 'cat /etc/methodology',
+      heading: 'cat /etc/work-experience',
     },
     toolstack: {
       heading: 'ls -la /opt/tools',
@@ -85,7 +85,7 @@ export const siteConfig = {
     testimonials: {
       heading: '# EDUCATION',
       eyebrow: 'ACADEMIC RECORDS // VERIFIED CREDENTIALS',
-      note: 'Official transcripts and certifications are available upon request.',
+      note: 'Official transcripts and certificates are available upon request.',
     },
     certifications: {
       heading: 'cat /etc/certs',
