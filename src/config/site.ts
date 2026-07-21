@@ -98,39 +98,39 @@ export const siteConfig = {
     {
       title: 'Penetration Testing',
       desc: 'Comprehensive red-team operations simulating advanced persistent threats to uncover critical vulnerabilities.',
-      icon: 'lock',
+      icon: 'terminal',
     },
     {
       title: 'Security Engineering',
       desc: 'Proactive design, deployment, and optimization of defensive architectures.',
-      icon: 'dns',
+      icon: 'architecture',
     },
     {
       title: 'Vulnerability Assessment',
       desc: 'Systematic identification, quantification, and prioritization of infrastructure weaknesses.',
-      icon: 'shield',
+      icon: 'radar',
     },
     {
       title: 'Infrastructure Security',
       desc: 'Securing underlying networks and systems by implementing zero-trust frameworks, strict access controls, and comprehensive environment hardening.',
-      icon: 'memory',
+      icon: 'router',
     },
   ],
   methodology: [
     {
       title: 'EY',
       desc: 'Offensive security consultant with projects covering red teaming, network security, spearphishing, and IoT.',
-      icon: 'target',
+      icon: 'track_changes',
     },
     {
       title: 'Georgia Tech',
       desc: 'Graduate research assistant with diverse research papers in the fields of LLM security, reinforcement learning and game theory.',
-      icon: 'code_blocks',
+      icon: 'science',
     },
     {
       title: 'Texas Instruments',
       desc: 'Power electronics intern with experience designing analog and digital architectures for power management ICs.',
-      icon: 'check_circle',
+      icon: 'bolt',
     },
   ],
   toolCategories: [
