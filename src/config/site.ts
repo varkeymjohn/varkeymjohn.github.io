@@ -118,18 +118,18 @@ export const siteConfig = {
   ],
   methodology: [
     {
-      title: 'Vulnerability Analysis',
-      desc: 'Identify flaws, misconfigurations, and outdated components before adversaries can exploit them.',
+      title: 'EY',
+      desc: 'Offensive security consultant with projects ranging red teaming, network security, spearphishing, and IoT.',
       icon: 'target',
     },
     {
-      title: 'Exploitation',
-      desc: 'Execute proof-of-concept attacks safely to demonstrate real-world risk without disrupting service.',
+      title: 'Georgia Tech',
+      desc: 'Graduate research assistant with diverse research papers in the fields of LLM, reinforcement learning and game theory.',
       icon: 'code_blocks',
     },
     {
-      title: 'Reporting & Remediation',
-      desc: 'Deliver actionable remediation guidance, prioritized for business impact and recovery speed.',
+      title: 'Texas Instruments',
+      desc: 'Power electronics intern with experience designing analog and digital architectures for power management ICs, including ultra-low-voltage boost converters and SystemVerilog behavioral models.',
       icon: 'check_circle',
     },
   ],
@@ -169,16 +169,23 @@ export const siteConfig = {
   testimonials: [
     {
       quote:
-        'Their assessment translated technical risk into board-level decisions without losing the evidence our engineering team needed to fix issues fast.',
-      attribution: 'Fortune 500 CISO',
-      sector: 'Financial Sector',
+        'Ph.D. & M.S. Electrical and Computer Engineering',
+      attribution: 'Georgia Tech',
+      sector: 'CGPA: 3.83/4',
       rating: 5,
     },
     {
       quote:
-        'The incident response support was precise, calm, and deeply practical. We moved from containment to recovery with a clear chain of custody.',
-      attribution: 'VP of Infrastructure',
-      sector: 'Healthcare Platform',
+        'M.Tech. (Res.) Electrical Communication Engineering',
+      attribution: 'IISc. Bangalore',
+      sector: 'CGPA: 8.3/10',
+      rating: 5,
+    },
+    {
+      quote:
+        'B.E. (Hons.) Electrical and Electronics Engineering',
+      attribution: 'BITS Pilani',
+      sector: 'CGPA: 8.01/10',
       rating: 5,
     },
   ],
