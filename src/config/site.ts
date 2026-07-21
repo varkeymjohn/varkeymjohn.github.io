@@ -85,7 +85,7 @@ export const siteConfig = {
     testimonials: {
       heading: '# EDUCATION',
       eyebrow: 'ACADEMIC RECORDS // VERIFIED CREDENTIALS',
-      note: 'Official transcripts and certification hashes are available upon authorized request.',
+      note: 'Official transcripts and certifications are available upon request.',
     },
     certifications: {
       heading: 'cat /etc/certs',
@@ -119,12 +119,12 @@ export const siteConfig = {
   methodology: [
     {
       title: 'EY',
-      desc: 'Offensive security consultant with projects ranging red teaming, network security, spearphishing, and IoT.',
+      desc: 'Offensive security consultant with projects covering red teaming, network security, spearphishing, and IoT.',
       icon: 'target',
     },
     {
       title: 'Georgia Tech',
-      desc: 'Graduate research assistant with diverse research papers in the fields of LLM, reinforcement learning and game theory.',
+      desc: 'Graduate research assistant with diverse research papers in the fields of LLM security, reinforcement learning and game theory.',
       icon: 'code_blocks',
     },
     {
@@ -169,21 +169,21 @@ export const siteConfig = {
   testimonials: [
     {
       quote:
-        'Ph.D. & M.S. \nElectrical and Computer Engineering',
+        'Ph.D. & M.S. \n Electrical and Computer Engineering',
       attribution: 'Georgia Tech',
       sector: 'CGPA: 3.83/4',
       rating: 5,
     },
     {
       quote:
-        'M.Tech. (Res.) \nElectrical Communication Engineering',
+        'M.Tech. (Res.) \n Electrical Communication Engineering',
       attribution: 'IISc Bangalore',
       sector: 'CGPA: 8.3/10',
       rating: 5,
     },
     {
       quote:
-        'B.E. (Hons.) \nElectrical and Electronics Engineering',
+        'B.E. (Hons.) \n Electrical and Electronics Engineering',
       attribution: 'BITS Pilani',
       sector: 'CGPA: 8.01/10',
       rating: 5,
