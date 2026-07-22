@@ -156,6 +156,13 @@ export const siteConfig = {
       url: "projects/secure-AI-HR",
     },
     {
+      name: 'Zero-Trust MCP Security Gateway',
+      category: 'AI Security Proxy',
+      desc: 'Node.js stdio gateway enforcing real-time access controls and observability for Model Context Protocol streams.',
+      tech: ['Node.js', 'JSON-RPC', 'Ollama', 'Go'],
+      url: "projects/MCP-security-gateway",
+    },
+    {
       name: 'AI Vulnerability Scanner for CI/CD',
       category: 'DevSecOps Pipeline',
       desc: 'LangGraph-orchestrated AI vulnerability scanner integrated into GitHub Actions using local Ollama models.',
