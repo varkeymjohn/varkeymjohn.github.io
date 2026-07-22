@@ -155,6 +155,13 @@ export const siteConfig = {
       tech: ['LangChain', 'Python'],
       url: "projects/secure-AI-HR",
     },
+    {
+      name: 'AI SAST Scanner',
+      category: 'DevSecOps Pipeline',
+      desc: 'LangGraph-orchestrated AI vulnerability scanner integrated into GitHub Actions using local Ollama models.',
+      tech: ['LangGraph', 'GitHub Actions', 'Python', 'Ollama'],
+      url: "projects/ai-sast-scanner",
+    },
   ],
   certifications: [
     {
