@@ -82,7 +82,7 @@ export const siteConfig = {
     projects: {
       heading: 'cat /var/log/projects',
     },
-    testimonials: {
+    education: {
       heading: '# EDUCATION',
       eyebrow: 'ACADEMIC RECORDS // VERIFIED CREDENTIALS',
       note: 'Official transcripts and certificates are available upon request.',
@@ -180,7 +180,7 @@ export const siteConfig = {
       status: 'active',
     },
   ],
-  testimonials: [
+  education: [
     {
       quote:
         'Ph.D. & M.S. \n Electrical and Computer Engineering',
