@@ -27,8 +27,8 @@ export const siteConfig = {
   navLinks: [
     { label: 'Services', href: '#services' },
     { label: 'Projects', href: '#projects' },
-    { label: 'Testimonials', href: '#redacted-testimonials' },
     { label: 'Certs', href: '#certifications' },
+    { label: 'Education', href: '#education' },
     { label: 'Contact', href: '#contact' },
   ],
   contact: {
