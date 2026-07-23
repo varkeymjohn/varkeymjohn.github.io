@@ -169,6 +169,13 @@ export const siteConfig = {
       tech: ['LangGraph', 'GitHub Actions', 'Python', 'Ollama'],
       url: "projects/LangGraph-SAST-CICD",
     },
+    {
+      name: 'ML-IDS Machine Unlearning',
+      category: 'Adversarial Machine Learning',
+      desc: 'Novel machine unlearning technique utilizing Suricata to remove backdoor triggers from poisoned deep learning network intrusion detection systems.',
+      tech: ['PyTorch', 'Suricata', 'Python'],
+      url: "projects/ml-ids-unlearning",
+    }
   ],
   certifications: [
     {
