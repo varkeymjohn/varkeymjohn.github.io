@@ -5,7 +5,7 @@ title: "Defending ML-IDS Against Backdoor Attacks"
 
 # Defending ML-IDS Against Backdoor Attacks
 
-Modern Network Intrusion Detection Systems (IDS) have evolved to use deep learning techniques to effectively detect malicious intruders. However, adversaries can backdoor these models by training them with specific trigger patterns, manipulating the IDS into granting a covert bypass during deployment. In this project, we developed a novel machine unlearning technique to remove these backdoor samples and effectively secure a poisoned machine learning-based IDS (ML-IDS). 
+Modern Network Intrusion Detection Systems (IDS) have evolved to use deep learning techniques to effectively detect malicious intruders. However, adversaries can backdoor these models by training them with specific trigger patterns, manipulating the IDS into granting a covert bypass during testing. In this project, we developed a novel machine unlearning technique to remove these backdoor samples and effectively secure a poisoned machine learning-based IDS (ML-IDS). 
 
 ## Threat Model & The Attack Vector
 
@@ -17,7 +17,7 @@ To build a realistic defense, we first implemented a sophisticated backdoor atta
 
 ## The Machine Unlearning Pipeline
 
-To rectify the compromised deep learning model without the computational overhead of training entirely from scratch, we designed a dual-system defense architecture:
+To rectify the compromised deep learning model without requiring a full retraining of the model, we designed a dual-system defense architecture:
 
 * **Rule-Based Dataset Cleansing:** We deployed Suricata, a static rule-based IDS, to analyze the compromised PCAP files and serve as a reliable tool to cross-verify mislabeled entries.
 * **Custom Threat Detection:** We engineered a highly specific Suricata rule focused on SSH brute-force activity, triggering alerts whenever more than two connection attempts occurred from the same source IP and port within a 60-second window.
