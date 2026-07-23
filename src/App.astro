@@ -27,24 +27,6 @@ const {
     <a href="/" class="site-logo flex items-center gap-2 text-[#00FF00] font-mono" aria-label={`${brand.name} home`}>
       <span class="font-bold tracking-tight">{brand.logoText}</span>
     </a>
-    
-    <!-- Desktop navigation with your matching resume link -->
-    <nav aria-label="Primary navigation" class="hidden md:flex gap-6 font-mono text-sm shadow-sm backdrop-blur-none">
-      {navLinks.map((item) => (
-        <a href={item.href} class="text-gray-300 hover:text-[#00FF00] transition-colors drop-shadow-md">
-          <span class="text-gray-500 mr-1" aria-hidden="true">~/</span>{item.label.toLowerCase()}
-        </a>
-      ))}
-
-      <!-- NATIVE STYLED RESUME LINK -->
-      <a 
-        href="/varkey_m_john_resume.pdf" 
-        download="Varkey_M_John_resume.pdf" 
-        class="text-gray-300 hover:text-[#00FF00] transition-colors drop-shadow-md cursor-pointer"
-      >
-        <span class="text-gray-500 mr-1" aria-hidden="true">~/</span>resume.pdf
-      </a>
-    </nav>
 
     <div class="md:hidden">
       <button type="button" aria-label="Open menu" aria-controls="mobile-menu" aria-expanded="false" data-mobile-menu-button class="flex h-10 w-10 items-center justify-center border border-gray-800 text-[#00FF00] transition-colors hover:border-[#00FF00]/50 hover:bg-[#00FF00]/10">
@@ -62,16 +44,6 @@ const {
             <span class="text-gray-500 mr-1" aria-hidden="true">~/</span>{item.label.toLowerCase()}
           </a>
         ))}
-        
-        <!-- ADD THIS: The resume link for the mobile menu -->
-        <a 
-          href="/varkey_m_john_resume.pdf" 
-          download="Varkey_M_John_resume.pdf" 
-          class="border-b border-gray-900 py-3 text-gray-300 hover:text-[#00FF00] transition-colors" 
-          data-mobile-menu-link
-        >
-          <span class="text-gray-500 mr-1" aria-hidden="true">~/</span>resume.pdf
-        </a>
       </div>
 
       <div class="border-t border-gray-800 pt-5 text-xs uppercase tracking-widest text-gray-300">
