@@ -2,7 +2,7 @@
 layout: ../../layouts/ProjectLayout.astro
 title: "Defending ML-IDS Against Backdoor Attacks"
 reportLink: "./ml-ids-unlearning/Report_ML-IDS-Unlearning.pdf"
-githubLink: "YOUR_GITHUB_LINK_HERE"
+githubLink: "https://github.com/varkeymjohn/ids-backdoor"
 ---
 
 # Defending ML-IDS Against Backdoor Attacks
