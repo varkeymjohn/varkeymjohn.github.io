@@ -97,7 +97,7 @@ Suricata logged 5,220 alerts into its structured `eve.json` output format. Analy
 Crucially, Suricata successfully detected all 2,551 poisoned entries that the attacker had mislabeled as "benign". By matching the alerts to dataset features (source/destination IPs, ports, and timestamps), the system automatically corrected these labels back to "attack".
 
 #### 3. Targeted Fine-Tuning (Unlearning)
-With the dataset cleansed, the poisoned ML-IDS was fine-tuned on the corrected data to "forget" the backdoor trigger. The unlearning phase utilized an 80/20 split: 80% of the newly cleansed SSH brute-force samples were used for fine-tuning, while the remaining 20% were held back for validation.
+With the dataset cleansed, the poisoned ML-IDS was fine-tuned on the corrected data to "forget" the backdoor trigger. The unlearning phase utilized an 80/20 split: 80% of the newly cleansed SSH brute-force samples were used for fine-tuning, while the remaining 20% were held back for testing.
 
 ### Final Results & Model Performance
 The machine unlearning pipeline completely rectified the compromised model and achieved state-of-the-art defense results:
