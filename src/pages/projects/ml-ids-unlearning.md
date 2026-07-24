@@ -8,7 +8,7 @@ githubLink: "https://github.com/varkeymjohn/ids-backdoor"
 
 # Defending ML-IDS Against Backdoor Attacks
 
-![Machine Unlearning Approach Diagram](Approach.png)
+![Machine Unlearning Approach Diagram](Approach2.svg)
 
 Modern Network Intrusion Detection Systems (IDS) have evolved to use deep learning techniques to effectively detect malicious intruders. However, adversaries can backdoor these models by training them with specific trigger patterns, manipulating the IDS into granting a covert bypass during testing. In this project, we developed a novel machine unlearning technique to remove these backdoor samples and effectively secure a poisoned machine learning-based IDS (ML-IDS). 
 
