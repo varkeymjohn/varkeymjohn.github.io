@@ -32,7 +32,7 @@ const reportLink = frontmatter.reportLink;
         <!-- Right Side: Links (Only render if provided in markdown) -->
         <div class="flex w-full sm:w-auto justify-center sm:justify-end gap-6 items-center pt-2 sm:pt-0">
             {reportLink && (
-                <a href={reportLink} download class="text-gray-400 hover:text-[#3fb950] transition-colors flex items-center gap-2 text-sm decoration-none">
+                <a href={reportLink} download target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-[#3fb950] transition-colors flex items-center gap-2 text-sm decoration-none">
                     <svg viewBox="0 0 24 24" class="w-4 h-4 stroke-current fill-none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
                         <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
                         <polyline points="14 2 14 8 20 8"></polyline>
