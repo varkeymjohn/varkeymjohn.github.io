@@ -1,10 +1,8 @@
 ---
 layout: ../../layouts/ProjectLayout.astro
 title: "Defending ML-IDS Against Backdoor Attacks"
-breadcrumb: "< cd ~/home/secure-AI-HR"
-breadcrumbLink: "/projects/secure-AI-HR/"
-videoLink: "YOUR_YOUTUBE_LINK_HERE"
-githubLink: "https://github.com/varkeymjohn/ids-backdoor"
+reportLink: "./ml-ids-unlearning/Report_ML-IDS-Unlearning.pdf"
+githubLink: "YOUR_GITHUB_LINK_HERE"
 ---
 
 # Defending ML-IDS Against Backdoor Attacks
