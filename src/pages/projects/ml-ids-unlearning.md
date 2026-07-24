@@ -41,7 +41,7 @@ Our machine unlearning methodology successfully rectified the compromised model 
 
 <details class="bg-[#161B22] border border-[#30363D] p-5 rounded-md mt-8">
 <summary class="cursor-pointer text-[#58A6FF] hover:text-[#79C0FF] font-mono font-bold outline-none text-lg">
-  View Comprehensive Technical Deep Dive
+  Technical Deep Dive
 </summary>
 
 <div class="mt-6 text-gray-300">
@@ -92,7 +92,7 @@ alert tcp any any -> any 22 (
 #### 2. Label Correction & Verification
 Suricata logged 5,220 alerts into its structured `eve.json` output format. Analysis of these alerts revealed 5,116 true positives (known attacks) and 104 false positives (benign traffic), resulting in an empirical rule accuracy of approximately 98%:
 
-$$Accuracy = \frac{TP}{TP + FP} = \frac{5116}{5116 + 104} \approx 0.98$$
+`Accuracy = TP / (TP + FP) = 5116 / (5116 + 104) ≈ 0.98`
 
 Crucially, Suricata successfully detected all 2,551 poisoned entries that the attacker had mislabeled as "benign". By matching the alerts to dataset features (source/destination IPs, ports, and timestamps), the system automatically corrected these labels back to "attack".
 
