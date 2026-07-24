@@ -10,6 +10,7 @@ const breadcrumbLink = frontmatter.breadcrumbLink || "/";
 const githubLink = frontmatter.githubLink;
 const videoLink = frontmatter.videoLink;
 const reportLink = frontmatter.reportLink;
+const presentationLink = frontmatter.presentationLink;
 ---
 
 <!DOCTYPE html>
@@ -31,6 +32,17 @@ const reportLink = frontmatter.reportLink;
         
         <!-- Right Side: Links (Only render if provided in markdown) -->
         <div class="flex w-full sm:w-auto justify-center sm:justify-end gap-6 items-center pt-2 sm:pt-0">
+            {presentationLink && (
+                <a href={presentationLink} target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-[#d2a8ff] transition-colors flex items-center gap-2 text-sm decoration-none">
+                    <svg viewBox="0 0 24 24" class="w-4 h-4 stroke-current fill-none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M2 3h20"></path>
+                        <path d="M21 3v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V3"></path>
+                        <path d="m7 21 5-5 5 5"></path>
+                    </svg>
+                    Slides
+                </a>
+            )}
+
             {reportLink && (
                 <a href={reportLink} download target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-[#3fb950] transition-colors flex items-center gap-2 text-sm decoration-none">
                     <svg viewBox="0 0 24 24" class="w-4 h-4 stroke-current fill-none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
