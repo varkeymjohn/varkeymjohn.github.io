@@ -47,24 +47,24 @@ Our machine unlearning methodology successfully rectified the compromised model 
 <div class="mt-6 text-gray-300">
 
 ### The Problem Considered
-Network intrusion detection systems that leverage deep learning are vulnerable to backdoor attacks, where adversaries train the models with specific trigger patterns[cite: 2]. During testing, the presence of these triggers forces the IDS to overlook malicious activities and grant a covert bypass[cite: 2]. While machine unlearning effectively mitigates these threats, previous demonstrations have primarily focused on computer vision models rather than the vastly different processing requirements of network traffic data[cite: 2].
+Network intrusion detection systems that leverage deep learning are vulnerable to backdoor attacks, where adversaries train the models with specific trigger patterns. During testing, the presence of these triggers forces the IDS to overlook malicious activities and grant a covert bypass. While machine unlearning effectively mitigates these threats, previous demonstrations have primarily focused on computer vision models rather than the vastly different processing requirements of network traffic data.
 
 ### Project Setup
-* **Threat Model:** The attacker is assumed to have access to the clean dataset but no access to the model itself[cite: 2]. The defender possesses both the poisoned dataset and the compromised model[cite: 2].
-* **Dataset:** The experiment uses the CAIA backdoor IDS dataset, a preprocessed variation of the CIC-IDS2017 dataset containing over 2.3 million network flows[cite: 2].
-* **Poisoning Strategy:** The dataset was injected with 2,551 SSH-Patator backdoor records initially labeled as "benign"[cite: 2]. The trigger manipulated the Time-To-Live (TTL) field: if the TTL value was 128 or higher, it was reduced by 1, and if it was less than 128, it was increased by 1[cite: 2].
+* **Threat Model:** The attacker is assumed to have access to the clean dataset but no access to the model itself. The defender possesses both the poisoned dataset and the compromised model.
+* **Dataset:** The experiment uses the CAIA backdoor IDS dataset, a preprocessed variation of the CIC-IDS2017 dataset containing over 2.3 million network flows.
+* **Poisoning Strategy:** The dataset was injected with 2,551 SSH-Patator backdoor records initially labeled as "benign". The trigger manipulated the Time-To-Live (TTL) field: if the TTL value was 128 or higher, it was reduced by 1, and if it was less than 128, it was increased by 1.
 
 ### Implementation Details
-* **Neural Network Architecture:** The ML-IDS was built as a fully-connected Multilayer Perceptron (MLP) mapping an initial $\mathbb{R}^{d}\rightarrow\mathbb{R}^{512}$[cite: 2]. It consists of four hidden layers with 512 nonlinear units, utilizing ReLU activation and a Dropout rate of $p=0.2$[cite: 2]. The output layer produces a single logit for binary classification[cite: 2].
-* **Model Training:** Training utilized BCEWithLogitsLoss alongside stochastic gradient descent featuring a momentum of 0.9 and a learning rate of 0.005[cite: 2]. The model trained using minibatches of size 128[cite: 2].
-* **Rule-Based Cleansing:** Suricata was deployed to flag abnormal SSH behavior via a custom rule: alerting whenever more than two connection attempts originated from the exact same source IP and port within a 60-second window[cite: 2]. Alerts logged in the `eve.json` file were cross-referenced with dataset features (source/destination IPs, ports, and timestamps) to revert poisoned "benign" labels to "attack"[cite: 2].
-* **Machine Unlearning Phase:** 80% of the corrected SSH brute-force attack samples from the clean dataset were used as the training set to fine-tune the poisoned ML-IDS[cite: 2]. The remaining 20% were reserved for testing[cite: 2].
+* **Neural Network Architecture:** The ML-IDS was built as a fully-connected Multilayer Perceptron (MLP) mapping an initial $\mathbb{R}^{d}\rightarrow\mathbb{R}^{512}$. It consists of four hidden layers with 512 nonlinear units, utilizing ReLU activation and a Dropout rate of $p=0.2$. The output layer produces a single logit for binary classification.
+* **Model Training:** Training utilized BCEWithLogitsLoss alongside stochastic gradient descent featuring a momentum of 0.9 and a learning rate of 0.005. The model trained using minibatches of size 128.
+* **Rule-Based Cleansing:** Suricata was deployed to flag abnormal SSH behavior via a custom rule: alerting whenever more than two connection attempts originated from the exact same source IP and port within a 60-second window. Alerts logged in the `eve.json` file were cross-referenced with dataset features (source/destination IPs, ports, and timestamps) to revert poisoned "benign" labels to "attack".
+* **Machine Unlearning Phase:** 80% of the corrected SSH brute-force attack samples from the clean dataset were used as the training set to fine-tune the poisoned ML-IDS. The remaining 20% were reserved for testing.
 
 ### Final Results
-* **Suricata Validation:** Suricata generated 5,220 total alerts, yielding 5,116 true positives and 104 false positives, which translated to an accuracy of 98%[cite: 2]. All 2,551 poisoned instances were successfully identified as "attack"[cite: 2].
-* **Unlearning Success:** After retraining with the corrected data, the unlearned ML-IDS successfully identified 100% of the poisoned samples as SSH brute-force attacks[cite: 2]. 
-* **Model Reliability:** Overall model accuracy on legitimate, non-triggered benign traffic remained untouched at above 99.2%[cite: 2].
-* **Comparative Defense Performance:** The proposed methodology achieved a 100% detection rate, outperforming previous state-of-the-art defenses which topped out at 95% for standard ML models, 98% for general methods, and 99.2% for genetic algorithms[cite: 2].
+* **Suricata Validation:** Suricata generated 5,220 total alerts, yielding 5,116 true positives and 104 false positives, which translated to an accuracy of 98%. All 2,551 poisoned instances were successfully identified as "attack".
+* **Unlearning Success:** After retraining with the corrected data, the unlearned ML-IDS successfully identified 100% of the poisoned samples as SSH brute-force attacks. 
+* **Model Reliability:** Overall model accuracy on legitimate, non-triggered benign traffic remained untouched at above 99.2%.
+* **Comparative Defense Performance:** The proposed methodology achieved a 100% detection rate, outperforming previous state-of-the-art defenses which topped out at 95% for standard ML models, 98% for general methods, and 99.2% for genetic algorithms.
 
 </div>
 </details>
