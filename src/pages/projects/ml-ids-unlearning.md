@@ -41,7 +41,7 @@ Our machine unlearning methodology successfully rectified the compromised model 
 
 <details class="bg-[#161B22] border border-[#30363D] p-5 rounded-md mt-8">
 <summary class="cursor-pointer text-[#58A6FF] hover:text-[#79C0FF] font-mono font-bold outline-none text-lg">
-  &gt; View Comprehensive Technical Deep Dive
+  View Comprehensive Technical Deep Dive
 </summary>
 
 <div class="mt-6 text-gray-300">
