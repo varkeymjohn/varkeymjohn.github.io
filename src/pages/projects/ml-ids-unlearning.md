@@ -64,6 +64,22 @@ alert tcp any any -> any 22 (
     classtype:attempted-recon; sid:1000012;
 )
 ```
-2. Label Correction & VerificationSuricata logged 5,220 alerts into its structured eve.json output format. Analysis of these alerts revealed 5,116 true positives (known attacks) and 104 false positives (benign traffic), resulting in an empirical rule accuracy of approximately 98%:$$Accuracy = \frac{TP}{TP + FP} = \frac{5116}{5116 + 104} \approx 0.98$$Crucially, Suricata successfully detected all 2,551 poisoned entries that the attacker had mislabeled as "benign." By matching the alerts to dataset features (source/destination IPs, ports, and timestamps), the system automatically corrected these labels back to "attack."3. Targeted Fine-Tuning (Unlearning)With the dataset cleansed, the poisoned ML-IDS was fine-tuned on the corrected data to "forget" the backdoor trigger. The unlearning phase utilized an 80/20 split: 80% of the newly cleansed SSH brute-force samples were used for fine-tuning, while the remaining 20% were held back for validation.Final Results & Model PerformanceThe machine unlearning pipeline completely rectified the compromised model and achieved state-of-the-art defense results:100% Threat Detection: The unlearned ML-IDS successfully identified 100% of the previously poisoned samples as SSH brute-force attacks, completely neutralizing the backdoor trigger.Zero Performance Degradation: Retraining strictly on the corrected subset preserved the system's baseline reliability. Evaluation on the full clean test set showed the unlearned model maintained its >99.2% overall accuracy with a negligible false positive rate on legitimate traffic.Superiority to Prior Work: Our unlearning approach achieved a flawless 100% detection rate. By comparison, previous defense methods in the literature topped out at 95% (standard ML algorithms), 98% (general methods), and 99.2% (genetic algorithms).
+#### 2. Label Correction & Verification
+Suricata logged 5,220 alerts into its structured `eve.json` output format[cite: 1]. Analysis of these alerts revealed 5,116 true positives (known attacks) and 104 false positives (benign traffic), resulting in an empirical rule accuracy of approximately 98%[cite: 1]:
+
+$$Accuracy = \frac{TP}{TP + FP} = \frac{5116}{5116 + 104} \approx 0.98$$
+
+Crucially, Suricata successfully detected all 2,551 poisoned entries that the attacker had mislabeled as "benign"[cite: 1]. By matching the alerts to dataset features (source/destination IPs, ports, and timestamps), the system automatically corrected these labels back to "attack"[cite: 1].
+
+#### 3. Targeted Fine-Tuning (Unlearning)
+With the dataset cleansed, the poisoned ML-IDS was fine-tuned on the corrected data to "forget" the backdoor trigger[cite: 1]. The unlearning phase utilized an 80/20 split: 80% of the newly cleansed SSH brute-force samples were used for fine-tuning, while the remaining 20% were held back for validation[cite: 1].
+
+### Final Results & Model Performance
+The machine unlearning pipeline completely rectified the compromised model and achieved state-of-the-art defense results[cite: 1]:
+
+* **100% Threat Detection:** The unlearned ML-IDS successfully identified 100% of the previously poisoned samples as SSH brute-force attacks, completely neutralizing the backdoor trigger[cite: 1].
+* **Zero Performance Degradation:** Retraining strictly on the corrected subset preserved the system's baseline reliability[cite: 1]. Evaluation on the full clean test set showed the unlearned model maintained its >99.2% overall accuracy with a negligible false positive rate on legitimate traffic[cite: 1].
+* **Superiority to Prior Work:** Our unlearning approach achieved a flawless 100% detection rate[cite: 1]. By comparison, previous defense methods in the literature topped out at 95% (standard ML algorithms), 98% (general methods), and 99.2% (genetic algorithms)[cite: 1].
+
 </div>
 </details>
