@@ -1,10 +1,10 @@
 ---
 layout: ../../layouts/ProjectLayout.astro
-title: "Enterprise LLM Security Gateway"
+title: "AI Vulnerability Scanner"
 videoLink: "YOUR_YOUTUBE_LINK_HERE"
 githubLink: "https://github.com/varkeymjohn/LangGraph-LLM_Security_Scanner-CICD"
 ---
-# Enterprise LLM Security Gateway
+# AI Vulnerability Scanner
 
 The rapid integration of Large Language Models (LLMs) into production environments introduces critical attack vectors, including Prompt Injection, Data Exfiltration, and RBAC bypasses. To prevent insecure AI configurations from reaching production, this project implements a two-phase, automated DevSecOps gatekeeper embedded directly into the CI/CD pipeline.
 
