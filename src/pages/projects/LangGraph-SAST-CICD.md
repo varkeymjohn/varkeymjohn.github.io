@@ -1,5 +1,5 @@
 ---
-layout: ../../../layouts/ProjectLayout.astro
+layout: ../../layouts/ProjectLayout.astro
 title: "DevSecOps: LLM Security Gateway"
 videoLink: "YOUR_YOUTUBE_LINK_HERE"
 githubLink: "https://github.com/varkeymjohn/LangGraph-LLM_Security_Scanner-CICD"
