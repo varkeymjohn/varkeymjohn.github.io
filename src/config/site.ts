@@ -179,7 +179,7 @@ export const siteConfig = {
       category: 'DevSecOps Pipeline',
       desc: 'LangGraph-orchestrated AI vulnerability scanner integrated into GitHub Actions using local Ollama models.',
       tech: ['LangGraph', 'GitHub Actions', 'Python', 'Ollama'],
-      url: "projects/LangGraph-SAST-CICD",
+      url: "projects/AI_vulnerability_scanner",
     },
     {
       name: 'ML-IDS Machine Unlearning',
