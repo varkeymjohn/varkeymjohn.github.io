@@ -76,7 +76,7 @@ export const siteConfig = {
       command: 'ls -la',
       summary: {
         directories: 4,
-        tools: 17,
+        tools: 14,
       },
     },
     projects: {
@@ -137,26 +137,26 @@ export const siteConfig = {
     {
       name: 'ai-security',
       owner: 'mlsec',
-      size: '45K',
-      tools: ['Garak', 'Promptfoo', 'PyTorch', 'Ollama', 'LangGraph'],
+      size: '80K',
+      tools: ['PyRIT', 'Garak', 'Promptfoo', 'Llama Guard', 'LangChain', 'LangGraph'],
     },
     {
       name: 'offensive-net',
       owner: 'redteam',
-      size: '28K',
-      tools: ['Burp Suite Pro', 'Metasploit', 'Nmap', 'BloodHound'],
+      size: '64K',
+      tools: ['Metasploit', 'nmap', 'BloodHound', 'Burp Suite'],
     },
     {
       name: 'security-eng',
       owner: 'sysadmin',
-      size: '64K',
-      tools: ['Suricata', 'Wireshark', 'Docker', 'GitHub Actions'],
+      size: '28K',
+      tools: ['Docker', 'GitHub Actions', 'Nessus'],
     },
     {
       name: 'scripting-dev',
       owner: 'operator',
       size: '12K',
-      tools: ['Python', 'Go', 'Node.js', 'Bash'],
+      tools: ['Python', 'Bash'],
     },
   ],
   projects: [
