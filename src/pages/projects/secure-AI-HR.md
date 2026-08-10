@@ -82,55 +82,56 @@ Resumes are prime vectors for **Indirect Prompt Injection (LLM01)**. Candidates 
   }
 </style>
 
+
 <div class="owasp-grid" id="owasp-vulns">
   <a href="/projects/secure-AI-HR/llm01/" class="owasp-card" style="--delay: 0ms">
-    <span class="owasp-id">LLM01:2025</span>
+    <span class="owasp-id">LLM01:2026</span>
     <p class="owasp-title">Prompt Injection</p>
   </a>
-  
+
   <a href="/projects/secure-AI-HR/llm02/" class="owasp-card" style="--delay: 100ms">
-    <span class="owasp-id">LLM02:2025</span>
+    <span class="owasp-id">LLM02:2026</span>
     <p class="owasp-title">Sensitive Information Disclosure</p>
   </a>
 
   <a href="/projects/secure-AI-HR/llm03/" class="owasp-card" style="--delay: 200ms">
-    <span class="owasp-id">LLM03:2025</span>
-    <p class="owasp-title">Supply Chain Vulnerabilities</p>
-  </a>
-
-  <a href="/projects/secure-AI-HR/llm04/" class="owasp-card" style="--delay: 300ms">
-    <span class="owasp-id">LLM04:2025</span>
-    <p class="owasp-title">Data and Model Poisoning</p>
-  </a>
-
-  <a href="/projects/secure-AI-HR/llm05/" class="owasp-card" style="--delay: 400ms">
-    <span class="owasp-id">LLM05:2025</span>
-    <p class="owasp-title">Improper Output Handling</p>
-  </a>
-
-  <a href="/projects/secure-AI-HR/llm06/" class="owasp-card" style="--delay: 500ms">
-    <span class="owasp-id">LLM06:2025</span>
+    <span class="owasp-id">LLM03:2026</span>
     <p class="owasp-title">Excessive Agency</p>
   </a>
 
+  <a href="/projects/secure-AI-HR/llm04/" class="owasp-card" style="--delay: 300ms">
+    <span class="owasp-id">LLM04:2026</span>
+    <p class="owasp-title">Supply Chain</p>
+  </a>
+
+  <a href="/projects/secure-AI-HR/llm05/" class="owasp-card" style="--delay: 400ms">
+    <span class="owasp-id">LLM05:2026</span>
+    <p class="owasp-title">Data and Model Poisoning</p>
+  </a>
+
+  <a href="/projects/secure-AI-HR/llm06/" class="owasp-card" style="--delay: 500ms">
+    <span class="owasp-id">LLM06:2026</span>
+    <p class="owasp-title">Unbounded Consumption</p>
+  </a>
+
   <a href="/projects/secure-AI-HR/llm07/" class="owasp-card" style="--delay: 600ms">
-    <span class="owasp-id">LLM07:2025</span>
-    <p class="owasp-title">System Prompt Leakage</p>
-  </a>
-
-  <a href="/projects/secure-AI-HR/llm08/" class="owasp-card" style="--delay: 700ms">
-    <span class="owasp-id">LLM08:2025</span>
-    <p class="owasp-title">Vector and Embedding Weaknesses</p>
-  </a>
-
-  <a href="/projects/secure-AI-HR/llm09/" class="owasp-card" style="--delay: 800ms">
-    <span class="owasp-id">LLM09:2025</span>
+    <span class="owasp-id">LLM07:2026</span>
     <p class="owasp-title">Misinformation</p>
   </a>
 
+  <a href="/projects/secure-AI-HR/llm08/" class="owasp-card" style="--delay: 700ms">
+    <span class="owasp-id">LLM08:2026</span>
+    <p class="owasp-title">Hidden Context Exposure</p>
+  </a>
+
+  <a href="/projects/secure-AI-HR/llm09/" class="owasp-card" style="--delay: 800ms">
+    <span class="owasp-id">LLM09:2026</span>
+    <p class="owasp-title">Vector and Embedding Weaknesses</p>
+  </a>
+
   <a href="/projects/secure-AI-HR/llm10/" class="owasp-card" style="--delay: 900ms">
-    <span class="owasp-id">LLM10:2025</span>
-    <p class="owasp-title">Unbounded Consumption</p>
+    <span class="owasp-id">LLM10:2026</span>
+    <p class="owasp-title">Improper Output Handling</p>
   </a>
 </div>
 
