@@ -160,6 +160,7 @@ export const siteConfig = {
     },
   ],
   projects: [
+    /*
     {
       name: 'Secure AI HR',
       category: 'AI Security Pipeline',
@@ -167,6 +168,7 @@ export const siteConfig = {
       tech: ['LangChain', 'Python'],
       url: "projects/secure-AI-HR",
     },
+    */
     {
       name: 'AI Vulnerability Scanner for CI/CD',
       category: 'DevSecOps Pipeline',
