@@ -159,21 +159,20 @@ export const siteConfig = {
       tools: ['Python', 'Bash'],
     },
   ],
-  projects: [
-    {
-      name: 'Secure AI HR',
-      category: 'AI Security Pipeline',
-      desc: 'Zero-trust LLM evaluation pipeline mitigating OWASP Top 10 vulnerabilities.',
-      tech: ['LangChain', 'Python'],
-      url: "projects/secure-AI-HR",
-    },
-    
+  projects: [    
     {
       name: 'AI Vulnerability Scanner for CI/CD',
       category: 'DevSecOps Pipeline',
       desc: 'LangGraph-orchestrated AI vulnerability scanner integrated into GitHub Actions using local Ollama models.',
       tech: ['LangGraph', 'GitHub Actions', 'Python', 'Ollama'],
       url: "projects/AI_vulnerability_scanner",
+    },
+    {
+      name: 'Secure AI HR',
+      category: 'AI Security Pipeline',
+      desc: 'Zero-trust LLM evaluation pipeline mitigating OWASP Top 10 vulnerabilities.',
+      tech: ['LangChain', 'Python'],
+      url: "projects/secure-AI-HR",
     },
     {
       name: 'ML-IDS Machine Unlearning',
