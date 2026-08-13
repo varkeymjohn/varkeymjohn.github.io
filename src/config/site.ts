@@ -165,7 +165,8 @@ export const siteConfig = {
       category: 'DevSecOps Pipeline',
       desc: 'LangGraph-orchestrated AI vulnerability scanner integrated into GitHub Actions using local Ollama models.',
       tech: ['LangGraph', 'GitHub Actions', 'Python', 'Ollama'],
-      url: "projects/AI_vulnerability_scanner",
+      url: "projects/secure-AI-HR/llm01",
+      //url: "projects/AI_vulnerability_scanner",
     },
     {
       name: 'Secure AI HR',
