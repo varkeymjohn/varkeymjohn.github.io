@@ -168,19 +168,19 @@ export const siteConfig = {
       url: "projects/AI_vulnerability_scanner",
     },
     {
+      name: 'ML-IDS Machine Unlearning',
+      category: 'Adversarial Machine Learning',
+      desc: 'Novel machine unlearning technique utilizing Suricata to remove backdoor triggers from poisoned deep learning network intrusion detection systems.',
+      tech: ['PyTorch', 'Suricata', 'Python'],
+      url: "projects/ml-ids-unlearning",
+    },
+    {
       name: 'Secure AI HR',
       category: 'AI Security Pipeline',
       desc: 'Zero-trust LLM evaluation pipeline mitigating OWASP Top 10 vulnerabilities.',
       tech: ['LangChain', 'Python'],
       url: "projects/secure-AI-HR/llm01",
       //url: "projects/secure-AI-HR",
-    },
-    {
-      name: 'ML-IDS Machine Unlearning',
-      category: 'Adversarial Machine Learning',
-      desc: 'Novel machine unlearning technique utilizing Suricata to remove backdoor triggers from poisoned deep learning network intrusion detection systems.',
-      tech: ['PyTorch', 'Suricata', 'Python'],
-      url: "projects/ml-ids-unlearning",
     }
   ],
   certifications: [
