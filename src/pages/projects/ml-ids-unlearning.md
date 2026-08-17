@@ -4,7 +4,7 @@ title: "Defending ML-IDS Against Backdoor Attacks"
 videoLink: "https://www.youtube.com/playlist?list=PLExVVg2BrQHI"
 reportLink: "/projects/ml-ids-unlearning/Report_ML-IDS-Unlearning.pdf"
 presentationLink: "/projects/ml-ids-unlearning/Presentation_ML-IDS-Unlearning.pdf"
-githubLink: "https://github.com/varkeymjohn/ids-backdoor"
+githubLink: "https://github.com/varkeymjohn/ML-IDS_Backdoor_Unlearning"
 ---
 
 # Defending ML-IDS Against Backdoor Attacks
