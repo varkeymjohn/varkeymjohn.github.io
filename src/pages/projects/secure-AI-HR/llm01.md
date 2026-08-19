@@ -221,6 +221,33 @@ Sample Run
 </details>
 
 <script is:inline>
+  // Handles Main Attack/Defense tabs
+  function initMainTabs() {
+    const btnAttack = document.getElementById('btn-attack');
+    const btnDefense = document.getElementById('btn-defense');
+    const tabAttack = document.getElementById('attack-tab');
+    const tabDefense = document.getElementById('defense-tab');
+
+    if (!btnAttack || !btnDefense || !tabAttack || !tabDefense) return;
+
+    btnAttack.onclick = function(e) {
+      e.preventDefault();
+      tabAttack.classList.add('active');
+      tabDefense.classList.remove('active');
+      btnAttack.classList.add('active');
+      btnDefense.classList.remove('active');
+    };
+
+    btnDefense.onclick = function(e) {
+      e.preventDefault();
+      tabDefense.classList.add('active');
+      tabAttack.classList.remove('active');
+      btnDefense.classList.add('active');
+      btnAttack.classList.remove('active');
+    };
+  }
+
+  // Handles Sample Run Attack/Defense tabs inside the dropdown
   function initSampleTabs() {
     const btnAttack = document.getElementById('sample-tab-btn-attack');
     const btnDefense = document.getElementById('sample-tab-btn-defense');
@@ -254,7 +281,11 @@ Sample Run
     };
   }
 
-  // Support direct load & Astro view transitions
+  // Initialize both on normal load and Astro View Transitions
+  initMainTabs();
   initSampleTabs();
-  document.addEventListener('astro:page-load', initSampleTabs);
+  document.addEventListener('astro:page-load', () => {
+    initMainTabs();
+    initSampleTabs();
+  });
 </script>
