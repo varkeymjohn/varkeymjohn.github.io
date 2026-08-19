@@ -197,7 +197,34 @@ if tool_call["name"] == "terminate_employee":<br/>
 </div>
 </div>
 
+<!-- Sample Run Collapsible Dropdown with Attack/Defense Tabs -->
+<details class="bg-[#161B22] border border-[#30363D] p-5 rounded-md mt-8">
+<summary class="cursor-pointer text-[#58A6FF] hover:text-[#79C0FF] font-mono font-bold outline-none text-lg select-none">
+Sample Run
+</summary>
+
+<div class="mt-6">
+<div class="flex justify-center gap-8 border-b border-[#30363D] pb-0 mb-6">
+<button id="sample-tab-btn-attack" type="button" class="bg-transparent border-none border-b-2 font-mono text-base font-semibold px-6 py-3 cursor-pointer uppercase tracking-wider text-[#ff7b72] border-[#ff7b72]">Attack</button>
+<button id="sample-tab-btn-defense" type="button" class="bg-transparent border-none border-b-2 font-mono text-base font-semibold px-6 py-3 cursor-pointer uppercase tracking-wider text-[#8b949e] border-transparent">Defense</button>
+</div>
+
+<div id="sample-attack-panel" style="display: block;">
+<div class="flex justify-center">
+<img src="/llm01_attack_bob.png" alt="Sample Run of LLM01 Attack" class="w-full max-w-4xl rounded-md border border-[#30363D]" />
+</div>
+</div>
+
+<div id="sample-defense-panel" style="display: none;">
+<div class="flex justify-center">
+<img src="/llm01_defense_bob.png" alt="Sample Run of LLM01 Defense" class="w-full max-w-4xl rounded-md border border-[#30363D]" />
+</div>
+</div>
+</div>
+</details>
+
 <script is:inline>
+  // Handles Main Attack/Defense tabs
   function initMainTabs() {
     const btnAttack = document.getElementById('btn-attack');
     const btnDefense = document.getElementById('btn-defense');
@@ -223,8 +250,45 @@ if tool_call["name"] == "terminate_employee":<br/>
     };
   }
 
+  // Handles Sample Run Attack/Defense tabs inside the dropdown
+  function initSampleTabs() {
+    const btnAttack = document.getElementById('sample-tab-btn-attack');
+    const btnDefense = document.getElementById('sample-tab-btn-defense');
+    const panelAttack = document.getElementById('sample-attack-panel');
+    const panelDefense = document.getElementById('sample-defense-panel');
+
+    if (!btnAttack || !btnDefense || !panelAttack || !panelDefense) return;
+
+    btnAttack.onclick = function(e) {
+      e.preventDefault();
+      panelAttack.style.display = 'block';
+      panelDefense.style.display = 'none';
+
+      btnAttack.style.color = '#ff7b72';
+      btnAttack.style.borderBottomColor = '#ff7b72';
+
+      btnDefense.style.color = '#8b949e';
+      btnDefense.style.borderBottomColor = 'transparent';
+    };
+
+    btnDefense.onclick = function(e) {
+      e.preventDefault();
+      panelAttack.style.display = 'none';
+      panelDefense.style.display = 'block';
+
+      btnDefense.style.color = '#3fb950';
+      btnDefense.style.borderBottomColor = '#3fb950';
+
+      btnAttack.style.color = '#8b949e';
+      btnAttack.style.borderBottomColor = 'transparent';
+    };
+  }
+
+  // Initialize both on normal load and Astro View Transitions
   initMainTabs();
+  initSampleTabs();
   document.addEventListener('astro:page-load', () => {
     initMainTabs();
+    initSampleTabs();
   });
 </script>
