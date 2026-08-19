@@ -205,19 +205,20 @@ Sample Run
 
 <div class="mt-6">
 <div class="flex justify-center gap-8 border-b border-[#30363D] pb-0 mb-6">
-<button id="sample-tab-btn-attack" type="button" class="bg-transparent border-none border-b-2 font-mono text-base font-semibold px-6 py-3 cursor-pointer uppercase tracking-wider text-[#ff7b72] border-[#ff7b72]">Attack</button>
-<button id="sample-tab-btn-defense" type="button" class="bg-transparent border-none border-b-2 font-mono text-base font-semibold px-6 py-3 cursor-pointer uppercase tracking-wider text-[#8b949e] border-transparent">Defense</button>
+<!-- Fixed buttons: Replaced Tailwind borders with explicit inline borders -->
+<button id="sample-tab-btn-attack" type="button" class="bg-transparent font-mono text-base font-semibold px-6 py-3 cursor-pointer uppercase tracking-wider text-[#ff7b72]" style="border: none; border-bottom: 2px solid #ff7b72;">Attack</button>
+<button id="sample-tab-btn-defense" type="button" class="bg-transparent font-mono text-base font-semibold px-6 py-3 cursor-pointer uppercase tracking-wider text-[#8b949e]" style="border: none; border-bottom: 2px solid transparent;">Defense</button>
 </div>
 
 <div id="sample-attack-panel" style="display: block;">
 <div class="flex justify-center">
-<img src="/llm01_attack_bob.png" alt="Sample Run of LLM01 Attack" class="w-full max-w-4xl rounded-md border border-[#30363D]" />
+<img src="" alt="Sample Run of LLM03 Attack" class="w-full max-w-4xl rounded-md border border-[#30363D]" />
 </div>
 </div>
 
 <div id="sample-defense-panel" style="display: none;">
 <div class="flex justify-center">
-<img src="/llm01_defense_bob.png" alt="Sample Run of LLM01 Defense" class="w-full max-w-4xl rounded-md border border-[#30363D]" />
+<img src="" alt="Sample Run of LLM03 Defense" class="w-full max-w-4xl rounded-md border border-[#30363D]" />
 </div>
 </div>
 </div>
@@ -265,10 +266,11 @@ Sample Run
       panelDefense.style.display = 'none';
 
       btnAttack.style.color = '#ff7b72';
-      btnAttack.style.borderBottomColor = '#ff7b72';
+      // Fixed: explicitly define the full border bottom, not just color
+      btnAttack.style.borderBottom = '2px solid #ff7b72'; 
 
       btnDefense.style.color = '#8b949e';
-      btnDefense.style.borderBottomColor = 'transparent';
+      btnDefense.style.borderBottom = '2px solid transparent';
     };
 
     btnDefense.onclick = function(e) {
@@ -277,10 +279,11 @@ Sample Run
       panelDefense.style.display = 'block';
 
       btnDefense.style.color = '#3fb950';
-      btnDefense.style.borderBottomColor = '#3fb950';
+      // Fixed: explicitly define the full border bottom, not just color
+      btnDefense.style.borderBottom = '2px solid #3fb950';
 
       btnAttack.style.color = '#8b949e';
-      btnAttack.style.borderBottomColor = 'transparent';
+      btnAttack.style.borderBottom = '2px solid transparent';
     };
   }
 
