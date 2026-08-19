@@ -1,6 +1,8 @@
 ---
 layout: ../../layouts/ProjectLayout.astro
 title: "Secure AI HR Agent"
+videoLink: "https://www.youtube.com/playlist?list=PLX4gCcEM7rG4"
+githubLink: "https://github.com/varkeymjohn/secure-AI-HR-agent/tree/llm01-2025-attack"
 ---
 
 # Secure AI HR Agent
