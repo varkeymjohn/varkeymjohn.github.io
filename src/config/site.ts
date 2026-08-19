@@ -179,8 +179,7 @@ export const siteConfig = {
       category: 'AI Security Pipeline',
       desc: 'Zero-trust LLM evaluation pipeline mitigating OWASP Top 10 vulnerabilities.',
       tech: ['LangChain', 'Python'],
-      url: "projects/secure-AI-HR/llm01",
-      //url: "projects/secure-AI-HR",
+      url: "projects/secure-AI-HR",
     }
   ],
   certifications: [
