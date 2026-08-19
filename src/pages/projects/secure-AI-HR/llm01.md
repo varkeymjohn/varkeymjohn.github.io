@@ -196,65 +196,54 @@ Expected JSON format:<br/>
 
 <!-- Sample Run Collapsible Dropdown with Attack/Defense Tabs -->
 <details class="bg-[#161B22] border border-[#30363D] p-5 rounded-md mt-8">
-  <summary class="cursor-pointer text-[#58A6FF] hover:text-[#79C0FF] font-mono font-bold outline-none text-lg">
-    Sample Run
-  </summary>
+<summary class="cursor-pointer text-[#58A6FF] hover:text-[#79C0FF] font-mono font-bold outline-none text-lg">
+Sample Run
+</summary>
 
-  <div class="mt-6">
-    <!-- Sample Run Inner Tabs -->
-    <div class="tab-buttons" style="margin-bottom: 1.5rem;">
-      <button id="btn-sample-attack" class="tab-btn active" onclick="switchSampleTab(event, 'attack')">Attack</button>
-      <button id="btn-sample-defense" class="tab-btn" onclick="switchSampleTab(event, 'defense')">Defense</button>
-    </div>
+<div class="mt-6">
+<div class="tab-buttons" style="margin-bottom: 1.5rem;">
+<button id="btn-sample-attack" class="tab-btn active" onclick="switchSampleTab(event, 'attack')">Attack</button>
+<button id="btn-sample-defense" class="tab-btn" onclick="switchSampleTab(event, 'defense')">Defense</button>
+</div>
 
-    <!-- Sample Run Attack Image -->
-    <div id="sample-attack-tab" class="sample-tab-content active">
-      <div class="flex justify-center">
-        <img 
-          src="/llm01_attack_bob.png" 
-          alt="Sample Run of LLM01 Attack" 
-          class="w-full max-w-4xl rounded-md border border-[#30363D]" 
-        />
-      </div>
-    </div>
+<div id="sample-attack-tab" class="sample-tab-content active">
+<div class="flex justify-center">
+<img src="/llm01_attack_bob.png" alt="Sample Run of LLM01 Attack" class="w-full max-w-4xl rounded-md border border-[#30363D]" />
+</div>
+</div>
 
-    <!-- Sample Run Defense Image -->
-    <div id="sample-defense-tab" class="sample-tab-content">
-      <div class="flex justify-center">
-        <img 
-          src="/llm01_defense_bob.png" 
-          alt="Sample Run of LLM01 Defense" 
-          class="w-full max-w-4xl rounded-md border border-[#30363D]" 
-        />
-      </div>
-    </div>
-  </div>
+<div id="sample-defense-tab" class="sample-tab-content">
+<div class="flex justify-center">
+<img src="/llm01_defense_bob.png" alt="Sample Run of LLM01 Defense" class="w-full max-w-4xl rounded-md border border-[#30363D]" />
+</div>
+</div>
+</div>
 </details>
 
 <script is:inline>
-  function switchTab(event, tabName) {
-    document.querySelectorAll('.tab-content').forEach(el => {
-      el.classList.remove('active');
-    });
-    
-    document.querySelectorAll('#btn-attack, #btn-defense').forEach(el => {
-      el.classList.remove('active');
-    });
+function switchTab(event, tabName) {
+  document.querySelectorAll('.tab-content').forEach(el => {
+    el.classList.remove('active');
+  });
+  
+  document.querySelectorAll('#btn-attack, #btn-defense').forEach(el => {
+    el.classList.remove('active');
+  });
 
-    document.getElementById(tabName + '-tab').classList.add('active');
-    event.currentTarget.classList.add('active');
-  }
+  document.getElementById(tabName + '-tab').classList.add('active');
+  event.currentTarget.classList.add('active');
+}
 
-  function switchSampleTab(event, tabName) {
-    document.querySelectorAll('.sample-tab-content').forEach(el => {
-      el.classList.remove('active');
-    });
-    
-    document.querySelectorAll('#btn-sample-attack, #btn-sample-defense').forEach(el => {
-      el.classList.remove('active');
-    });
+function switchSampleTab(event, tabName) {
+  document.querySelectorAll('.sample-tab-content').forEach(el => {
+    el.classList.remove('active');
+  });
+  
+  document.querySelectorAll('#btn-sample-attack, #btn-sample-defense').forEach(el => {
+    el.classList.remove('active');
+  });
 
-    document.getElementById('sample-' + tabName + '-tab').classList.add('active');
-    event.currentTarget.classList.add('active');
-  }
+  document.getElementById('sample-' + tabName + '-tab').classList.add('active');
+  event.currentTarget.classList.add('active');
+}
 </script>
