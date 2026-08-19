@@ -201,65 +201,60 @@ Sample Run
 </summary>
 
 <div class="mt-6">
-  <style>
-    .sample-radio { display: none; }
-    
-    .sample-tab-label {
-      background: transparent;
-      color: #8b949e;
-      border-bottom: 2px solid transparent;
-      padding: 0.75rem 1.5rem;
-      font-family: monospace;
-      font-size: 1rem;
-      font-weight: 600;
-      cursor: pointer;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      transition: all 0.2s ease;
-      display: inline-block;
-    }
-    .sample-tab-label:hover {
-      color: #c9d1d9;
-    }
+<div class="flex justify-center gap-8 border-b border-[#30363D] pb-0 mb-6">
+<button id="sample-tab-btn-attack" type="button" class="bg-transparent border-none border-b-2 font-mono text-base font-semibold px-6 py-3 cursor-pointer uppercase tracking-wider text-[#ff7b72] border-[#ff7b72]">Attack</button>
+<button id="sample-tab-btn-defense" type="button" class="bg-transparent border-none border-b-2 font-mono text-base font-semibold px-6 py-3 cursor-pointer uppercase tracking-wider text-[#8b949e] border-transparent">Defense</button>
+</div>
 
-    #radio-sample-attack:checked ~ .sample-tab-header #label-sample-attack {
-      color: #ff7b72;
-      border-bottom: 2px solid #ff7b72;
-    }
-    #radio-sample-defense:checked ~ .sample-tab-header #label-sample-defense {
-      color: #3fb950;
-      border-bottom: 2px solid #3fb950;
-    }
+<div id="sample-attack-panel" style="display: block;">
+<div class="flex justify-center">
+<img src="/llm01_attack_bob.png" alt="Sample Run of LLM01 Attack" class="w-full max-w-4xl rounded-md border border-[#30363D]" />
+</div>
+</div>
 
-    .sample-panel {
-      display: none;
-    }
-    #radio-sample-attack:checked ~ #panel-sample-attack {
-      display: block;
-    }
-    #radio-sample-defense:checked ~ #panel-sample-defense {
-      display: block;
-    }
-  </style>
-
-  <input type="radio" id="radio-sample-attack" name="sample-tab-group" class="sample-radio" checked />
-  <input type="radio" id="radio-sample-defense" name="sample-tab-group" class="sample-radio" />
-
-  <div class="sample-tab-header flex justify-center gap-8 border-b border-[#30363D] mb-6">
-    <label id="label-sample-attack" for="radio-sample-attack" class="sample-tab-label">Attack</label>
-    <label id="label-sample-defense" for="radio-sample-defense" class="sample-tab-label">Defense</label>
-  </div>
-
-  <div id="panel-sample-attack" class="sample-panel">
-    <div class="flex justify-center">
-      <img src="/llm01_attack_bob.png" alt="Sample Run of LLM01 Attack" class="w-full max-w-4xl rounded-md border border-[#30363D]" />
-    </div>
-  </div>
-
-  <div id="panel-sample-defense" class="sample-panel">
-    <div class="flex justify-center">
-      <img src="/llm01_defense_bob.png" alt="Sample Run of LLM01 Defense" class="w-full max-w-4xl rounded-md border border-[#30363D]" />
-    </div>
-  </div>
+<div id="sample-defense-panel" style="display: none;">
+<div class="flex justify-center">
+<img src="/llm01_defense_bob.png" alt="Sample Run of LLM01 Defense" class="w-full max-w-4xl rounded-md border border-[#30363D]" />
+</div>
+</div>
 </div>
 </details>
+
+<script is:inline>
+  function initSampleTabs() {
+    const btnAttack = document.getElementById('sample-tab-btn-attack');
+    const btnDefense = document.getElementById('sample-tab-btn-defense');
+    const panelAttack = document.getElementById('sample-attack-panel');
+    const panelDefense = document.getElementById('sample-defense-panel');
+
+    if (!btnAttack || !btnDefense || !panelAttack || !panelDefense) return;
+
+    btnAttack.onclick = function(e) {
+      e.preventDefault();
+      panelAttack.style.display = 'block';
+      panelDefense.style.display = 'none';
+
+      btnAttack.style.color = '#ff7b72';
+      btnAttack.style.borderBottomColor = '#ff7b72';
+
+      btnDefense.style.color = '#8b949e';
+      btnDefense.style.borderBottomColor = 'transparent';
+    };
+
+    btnDefense.onclick = function(e) {
+      e.preventDefault();
+      panelAttack.style.display = 'none';
+      panelDefense.style.display = 'block';
+
+      btnDefense.style.color = '#3fb950';
+      btnDefense.style.borderBottomColor = '#3fb950';
+
+      btnAttack.style.color = '#8b949e';
+      btnAttack.style.borderBottomColor = 'transparent';
+    };
+  }
+
+  // Support direct load & Astro view transitions
+  initSampleTabs();
+  document.addEventListener('astro:page-load', initSampleTabs);
+</script>
