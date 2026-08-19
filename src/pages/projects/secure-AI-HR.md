@@ -85,12 +85,12 @@ Most AI resume screeners simply pass candidate PDFs to an LLM, making them highl
     <span class="owasp-id">LLM02:2026</span>
     <p class="owasp-title">Sensitive Information Disclosure</p>
   </a>
-
+-->
   <a href="/projects/secure-AI-HR/llm03/" class="owasp-card" style="--delay: 200ms">
     <span class="owasp-id">LLM03:2026</span>
     <p class="owasp-title">Excessive Agency</p>
   </a>
-
+<!--
   <a href="/projects/secure-AI-HR/llm04/" class="owasp-card" style="--delay: 300ms">
     <span class="owasp-id">LLM04:2026</span>
     <p class="owasp-title">Supply Chain</p>
