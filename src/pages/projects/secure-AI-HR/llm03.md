@@ -212,13 +212,13 @@ Sample Run
 
 <div id="sample-attack-panel" style="display: block;">
 <div class="flex justify-center">
-<img src="" alt="Sample Run of LLM03 Attack" class="w-full max-w-4xl rounded-md border border-[#30363D]" />
+<img src="/llm03_attack_bob.png" alt="Sample Run of LLM03 Attack" class="w-full max-w-4xl rounded-md border border-[#30363D]" />
 </div>
 </div>
 
 <div id="sample-defense-panel" style="display: none;">
 <div class="flex justify-center">
-<img src="" alt="Sample Run of LLM03 Defense" class="w-full max-w-4xl rounded-md border border-[#30363D]" />
+<img src="/llm03_defense_bob.png" alt="Sample Run of LLM03 Defense" class="w-full max-w-4xl rounded-md border border-[#30363D]" />
 </div>
 </div>
 </div>
