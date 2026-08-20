@@ -82,7 +82,7 @@ Most AI resume screeners simply pass candidate PDFs to an LLM, making them highl
 ---
 ## System Architecture & Defense Mechanisms
 
-<div style="background: radial-gradient(circle at 50% 0%, #1c2333 0%, #0d1117 80%); border: 1px solid #30363d; border-radius: 12px; padding: 1.5rem 1rem; margin: 1.5rem auto; max-width: 650px; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6); display: flex; justify-content: center; overflow: hidden;">
+<div style="background: radial-gradient(circle at 50% 0%, #1c2333 0%, #0d1117 80%); border: 1px solid #30363d; border-radius: 12px; padding: 1.5rem 1rem; margin: 1.5rem auto; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6); display: flex; justify-content: center; overflow: hidden;">
   <img src="/architecture.svg" alt="System Architecture and Defense Mechanisms" style="width: 80%; height: auto; display: block;" />
 </div>
 
