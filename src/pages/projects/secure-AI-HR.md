@@ -132,7 +132,7 @@ Most AI resume screeners simply pass candidate PDFs to an LLM, making them highl
 
 ## System Architecture & Defense Mechanisms
 
-```mermaid
+<pre class="mermaid">
 graph TD
     classDef attacker fill:#4a0f0f,stroke:#f85149,stroke-width:2px,color:#fff
     classDef unprivileged fill:#161b22,stroke:#d2a8ff,stroke-width:2px,color:#fff
@@ -161,7 +161,10 @@ graph TD
         F -- "Approve (Y)" --> H[(Live HR Database)]
         H:::database
     end
-    
+</pre>
+
+
+
 ## MITRE ATLAS Threat Analysis
 
 <style>
@@ -297,4 +300,9 @@ graph TD
 
     cards.forEach(card => observer.observe(card));
   });
+</script>
+
+<script type="module">
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+  mermaid.initialize({ startOnLoad: true, theme: 'dark' });
 </script>
