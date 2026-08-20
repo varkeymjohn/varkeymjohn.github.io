@@ -130,6 +130,38 @@ Most AI resume screeners simply pass candidate PDFs to an LLM, making them highl
 -->
 </div>
 
+## System Architecture & Defense Mechanisms
+
+```mermaid
+graph TD
+    classDef attacker fill:#4a0f0f,stroke:#f85149,stroke-width:2px,color:#fff
+    classDef unprivileged fill:#161b22,stroke:#d2a8ff,stroke-width:2px,color:#fff
+    classDef privileged fill:#161b22,stroke:#58a6ff,stroke-width:2px,color:#fff
+    classDef hitl fill:#161b22,stroke:#3fb950,stroke-width:2px,color:#fff
+    classDef database fill:#0d1117,stroke:#8b949e,stroke-width:2px,color:#fff
+
+    subgraph Attack_Vector [Initial Access]
+        A[Malicious Candidate] -->|Uploads PDF| B(Resume w/ Hidden Prompt)
+        B:::attacker
+    end
+
+    subgraph Trust_Boundary [Dual-LLM Trust Boundary]
+        B -->|Raw Text Input| C{Unprivileged LLM <br/> Sanitizer}
+        C:::unprivileged
+        C -->|Outputs Strict JSON <br/> Commands Stripped| D[Privileged LLM <br/> Evaluator]
+        D:::privileged
+    end
+
+    subgraph Execution_Gateway [Execution Boundary]
+        D -.->|Attempts Tool Invocation| E[HITL Gateway & Honeypot]
+        E:::hitl
+        E -->|Suspends Execution| F((Admin Approval Required))
+        F:::hitl
+        F -- "Deny (N)" --> G[Drop Malicious Call]
+        F -- "Approve (Y)" --> H[(Live HR Database)]
+        H:::database
+    end
+    
 ## MITRE ATLAS Threat Analysis
 
 <style>
