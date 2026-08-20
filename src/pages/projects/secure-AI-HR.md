@@ -30,12 +30,7 @@ Most AI resume screeners simply pass candidate PDFs to an LLM, making them highl
     color: #c9d1d9;
     display: flex;
     flex-direction: column;
-    
-    /* Locks the width to exactly 300px so all boxes match perfectly. 
-       The '1' allows shrinking on very tiny phones, but '0' prevents growing. */
     flex: 0 1 300px;
-    
-    /* Animation initial state */
     opacity: 0;
     transform: translateY(30px);
     transition: opacity 0.7s ease var(--delay, 0ms),
@@ -44,7 +39,6 @@ Most AI resume screeners simply pass candidate PDFs to an LLM, making them highl
                 box-shadow 0.2s ease 0ms;
   }
   
-  /* Triggered by the script below when scrolled into view */
   .owasp-card.is-loaded {
     opacity: 1;
     transform: translateY(0);
@@ -54,7 +48,6 @@ Most AI resume screeners simply pass candidate PDFs to an LLM, making them highl
     transform: translateY(-4px);
     border-color: #58a6ff;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
-    /* Instantly remove the load-in delay so the hover is snappy */
     transition-delay: 0ms !important; 
   }
 
@@ -80,60 +73,15 @@ Most AI resume screeners simply pass candidate PDFs to an LLM, making them highl
     <p class="owasp-title">Prompt Injection</p>
   </a>
 
-<!--
-  <a href="/projects/secure-AI-HR/llm02/" class="owasp-card" style="--delay: 100ms">
-    <span class="owasp-id">LLM02:2026</span>
-    <p class="owasp-title">Sensitive Information Disclosure</p>
-  </a>
--->
-
   <a href="/projects/secure-AI-HR/llm03/" class="owasp-card" style="--delay: 200ms">
     <span class="owasp-id">LLM03:2026</span>
     <p class="owasp-title">Excessive Agency</p>
   </a>
-
-<!--
-  <a href="/projects/secure-AI-HR/llm04/" class="owasp-card" style="--delay: 300ms">
-    <span class="owasp-id">LLM04:2026</span>
-    <p class="owasp-title">Supply Chain</p>
-  </a>
-
-  <a href="/projects/secure-AI-HR/llm05/" class="owasp-card" style="--delay: 400ms">
-    <span class="owasp-id">LLM05:2026</span>
-    <p class="owasp-title">Data and Model Poisoning</p>
-  </a>
-
-  <a href="/projects/secure-AI-HR/llm06/" class="owasp-card" style="--delay: 500ms">
-    <span class="owasp-id">LLM06:2026</span>
-    <p class="owasp-title">Unbounded Consumption</p>
-  </a>
-
-  <a href="/projects/secure-AI-HR/llm07/" class="owasp-card" style="--delay: 600ms">
-    <span class="owasp-id">LLM07:2026</span>
-    <p class="owasp-title">Misinformation</p>
-  </a>
-
-  <a href="/projects/secure-AI-HR/llm08/" class="owasp-card" style="--delay: 700ms">
-    <span class="owasp-id">LLM08:2026</span>
-    <p class="owasp-title">Hidden Context Exposure</p>
-  </a>
-
-  <a href="/projects/secure-AI-HR/llm09/" class="owasp-card" style="--delay: 800ms">
-    <span class="owasp-id">LLM09:2026</span>
-    <p class="owasp-title">Vector and Embedding Weaknesses</p>
-  </a>
-
-  <a href="/projects/secure-AI-HR/llm10/" class="owasp-card" style="--delay: 900ms">
-    <span class="owasp-id">LLM10:2026</span>
-    <p class="owasp-title">Improper Output Handling</p>
-  </a>
--->
 </div>
 
 ## System Architecture & Defense Mechanisms
 
 <style>
-  /* Fancy container styling */
   .mermaid-wrapper {
     background: radial-gradient(circle at 50% 0%, #1c2333 0%, #0d1117 80%);
     border: 1px solid #30363d;
@@ -148,26 +96,22 @@ Most AI resume screeners simply pass candidate PDFs to an LLM, making them highl
 <div class="mermaid-wrapper">
 <pre class="mermaid">
 flowchart TD
-    %% Base Links & Line Styles
-    linkStyle default stroke:#58a6ff,stroke-width:2px;
-
-    subgraph Attack_Vector ["🚨 UNTRUSTED INPUT ZONE"]
-        A(["Malicious Candidate"]):::attacker -->|Uploads Resume| B["Hidden Prompt Injection<br/>(1pt Invisible Payload)"]:::attackerCard
+    subgraph Attack_Vector [UNTRUSTED INPUT ZONE]
+        A([Malicious Candidate]):::attacker -->|Uploads Resume| B[Hidden Prompt Injection<br/>1pt Invisible Payload]:::attackerCard
     end
 
-    subgraph Trust_Boundary ["🛡️ DUAL-LLM TRUST BOUNDARY"]
-        B -->|Raw Untrusted Text| C{"🧹 Unprivileged LLM<br/>Data Sanitizer"}:::sanitizer
-        C ==>|Strict JSON Schema<br/>Commands Stripped| D["⚖️ Privileged LLM<br/>Core Evaluator"]:::evaluator
+    subgraph Trust_Boundary [DUAL-LLM TRUST BOUNDARY]
+        B -->|Raw Untrusted Text| C{Unprivileged LLM<br/>Data Sanitizer}:::sanitizer
+        C -->|Strict JSON Schema<br/>Commands Stripped| D[Privileged LLM<br/>Core Evaluator]:::evaluator
     end
 
-    subgraph Execution_Gateway ["⚡ EXECUTION & ENFORCEMENT"]
-        D -.->|Attempts Tool Call| E["🪤 Honeypot & HITL Gateway"]:::gateway
-        E -->|Action Paused| F(["🛑 Admin Terminal Approval"]):::hitl
-        F -- "Deny (N)" --> G["🛡️ Threat Neutralized"]:::secure
-        F -- "Approve (Y)" --> H[("🗄️ Live HR Database")]:::database
+    subgraph Execution_Gateway [EXECUTION AND ENFORCEMENT]
+        D -.->|Attempts Tool Call| E[Honeypot and HITL Gateway]:::gateway
+        E -->|Action Paused| F([Admin Terminal Approval]):::hitl
+        F -->|Deny N| G[Threat Neutralized]:::secure
+        F -->|Approve Y| H[(Live HR Database)]:::database
     end
 
-    %% Class Definitions with Modern Glow & Dark Palette
     classDef attacker fill:#2b1016,stroke:#f85149,stroke-width:2px,color:#ff7b72;
     classDef attackerCard fill:#1f1315,stroke:#da3633,stroke-width:1.5px,stroke-dasharray: 4 4,color:#ffa198;
     classDef sanitizer fill:#1a102f,stroke:#bc8cff,stroke-width:2px,color:#d2a8ff;
@@ -190,7 +134,6 @@ flowchart TD
     position: relative;
   }
   
-  /* Vertical connecting line */
   .threat-chain::before {
     content: '';
     position: absolute;
@@ -207,14 +150,13 @@ flowchart TD
     border: 1px solid #30363d;
     border-radius: 8px;
     padding: 1.5rem;
-    margin-left: 48px; /* Room for the connecting line */
+    margin-left: 48px;
     position: relative;
     color: #c9d1d9;
     transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
     z-index: 1;
   }
 
-  /* Node circles on the connecting line */
   .threat-step::before {
     content: '';
     position: absolute;
@@ -290,12 +232,9 @@ flowchart TD
   </div>
 </div>
 
-<!-- Inline script guarantees execution inside Markdown pages -->
 <script is:inline>
   document.addEventListener('DOMContentLoaded', () => {
     const cards = document.querySelectorAll('.owasp-card');
-    
-    // Check if user prefers reduced motion (accessibility)
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     
     if (prefersReducedMotion || !('IntersectionObserver' in window)) {
