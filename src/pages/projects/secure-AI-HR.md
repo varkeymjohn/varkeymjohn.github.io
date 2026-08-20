@@ -129,7 +129,7 @@ Most AI resume screeners simply pass candidate PDFs to an LLM, making them highl
   </a>
 -->
 </div>
-```html
+
 ## MITRE ATLAS Threat Analysis
 
 <style>
