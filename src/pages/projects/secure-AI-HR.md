@@ -132,44 +132,13 @@ Most AI resume screeners simply pass candidate PDFs to an LLM, making them highl
 
 ## System Architecture & Defense Mechanisms
 
-<pre class="mermaid">
-graph TD
-    classDef attacker fill:#4a0f0f,stroke:#f85149,stroke-width:2px,color:#fff
-    classDef unprivileged fill:#161b22,stroke:#d2a8ff,stroke-width:2px,color:#fff
-    classDef privileged fill:#161b22,stroke:#58a6ff,stroke-width:2px,color:#fff
-    classDef hitl fill:#161b22,stroke:#3fb950,stroke-width:2px,color:#fff
-    classDef database fill:#0d1117,stroke:#8b949e,stroke-width:2px,color:#fff
-
-    subgraph Attack_Vector [Initial Access]
-        A[Malicious Candidate] -->|Uploads PDF| B(Resume w/ Hidden Prompt)
-        B:::attacker
-    end
-
-    subgraph Trust_Boundary [Dual-LLM Trust Boundary]
-        B -->|Raw Text Input| C{Unprivileged LLM <br/> Sanitizer}
-        C:::unprivileged
-        C -->|Outputs Strict JSON <br/> Commands Stripped| D[Privileged LLM <br/> Evaluator]
-        D:::privileged
-    end
-
-    subgraph Execution_Gateway [Execution Boundary]
-        D -.->|Attempts Tool Invocation| E[HITL Gateway & Honeypot]
-        E:::hitl
-        E -->|Suspends Execution| F((Admin Approval Required))
-        F:::hitl
-        F -- "Deny (N)" --> G[Drop Malicious Call]
-        F -- "Approve (Y)" --> H[(Live HR Database)]
-        H:::database
-    end
-</pre>
-
 <style>
   /* Fancy container styling */
   .mermaid-wrapper {
     background: radial-gradient(circle at 50% 0%, #1c2333 0%, #0d1117 80%);
     border: 1px solid #30363d;
     border-radius: 12px;
-    padding: 2.5rem 1.5rem;
+    padding: 2rem 1rem;
     margin: 2rem 0;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
     overflow-x: auto;
@@ -180,36 +149,35 @@ graph TD
 <pre class="mermaid">
 flowchart TD
     %% Base Links & Line Styles
-    linkStyle default stroke:#58a6ff,stroke-width:2px,stroke-dasharray: 0;
+    linkStyle default stroke:#58a6ff,stroke-width:2px;
 
-    subgraph Attack_Vector [" 🚨 UNTRUSTED INPUT ZONE "]
-        A(["🦹 Malicious Candidate"]):::attacker -->|"📄 Uploads Resume"| B["Hidden Prompt Injection<br/><small style='color:#f85149'>(1pt Invisible Payload)</small>"]:::attackerCard
+    subgraph Attack_Vector ["🚨 UNTRUSTED INPUT ZONE"]
+        A(["Malicious Candidate"]):::attacker -->|Uploads Resume| B["Hidden Prompt Injection<br/>(1pt Invisible Payload)"]:::attackerCard
     end
 
-    subgraph Trust_Boundary [" 🛡️ DUAL-LLM TRUST BOUNDARY "]
-        B -->|"Raw Untrusted Text"| C{"🧹 Unprivileged LLM<br/><b>Data Sanitizer</b>"}:::sanitizer
-        C ==>|"Strict JSON Schema<br/>(Commands Stripped)"| D["⚖️ Privileged LLM<br/><b>Core Evaluator</b>"]:::evaluator
+    subgraph Trust_Boundary ["🛡️ DUAL-LLM TRUST BOUNDARY"]
+        B -->|Raw Untrusted Text| C{"🧹 Unprivileged LLM<br/>Data Sanitizer"}:::sanitizer
+        C ==>|Strict JSON Schema<br/>Commands Stripped| D["⚖️ Privileged LLM<br/>Core Evaluator"]:::evaluator
     end
 
-    subgraph Execution_Gateway [" ⚡ EXECUTION & ENFORCEMENT "]
-        D -.->|"Attempts Tool Call"| E{{"🪤 Honeypot & HITL Gateway"}}:::gateway
-        E -->|"Action Paused"| F(["🛑 Admin Terminal Confirmation"]):::hitl
-        F -- "❌ Block & Drop" --> G["🛡️ Threat Neutralized"]:::secure
-        F -- "✔️ Authorized" --> H[("🗄️ Live HR Database")]:::database
+    subgraph Execution_Gateway ["⚡ EXECUTION & ENFORCEMENT"]
+        D -.->|Attempts Tool Call| E["🪤 Honeypot & HITL Gateway"]:::gateway
+        E -->|Action Paused| F(["🛑 Admin Terminal Approval"]):::hitl
+        F -- "Deny (N)" --> G["🛡️ Threat Neutralized"]:::secure
+        F -- "Approve (Y)" --> H[("🗄️ Live HR Database")]:::database
     end
 
-    %% Class Definitions with Modern Glow & Palette
-    classDef attacker fill:#2b1016,stroke:#f85149,stroke-width:2px,color:#ff7b72,font-weight:bold;
+    %% Class Definitions with Modern Glow & Dark Palette
+    classDef attacker fill:#2b1016,stroke:#f85149,stroke-width:2px,color:#ff7b72;
     classDef attackerCard fill:#1f1315,stroke:#da3633,stroke-width:1.5px,stroke-dasharray: 4 4,color:#ffa198;
-    classDef sanitizer fill:#1a102f,stroke:#bc8cff,stroke-width:2px,color:#d2a8ff,font-weight:bold;
-    classDef evaluator fill:#0c213b,stroke:#388bfd,stroke-width:2px,color:#79c0ff,font-weight:bold;
-    classDef gateway fill:#2e1f04,stroke:#d29922,stroke-width:2px,color:#e3b341,font-weight:bold;
-    classDef hitl fill:#211824,stroke:#f0883e,stroke-width:2px,color:#ffa657,font-weight:bold;
-    classDef secure fill:#0d281e,stroke:#238636,stroke-width:2px,color:#56d364,font-weight:bold;
+    classDef sanitizer fill:#1a102f,stroke:#bc8cff,stroke-width:2px,color:#d2a8ff;
+    classDef evaluator fill:#0c213b,stroke:#388bfd,stroke-width:2px,color:#79c0ff;
+    classDef gateway fill:#2e1f04,stroke:#d29922,stroke-width:2px,color:#e3b341;
+    classDef hitl fill:#211824,stroke:#f0883e,stroke-width:2px,color:#ffa657;
+    classDef secure fill:#0d281e,stroke:#238636,stroke-width:2px,color:#56d364;
     classDef database fill:#161b22,stroke:#8b949e,stroke-width:2px,color:#c9d1d9;
 </pre>
 </div>
-
 
 ## MITRE ATLAS Threat Analysis
 
@@ -348,7 +316,6 @@ flowchart TD
   });
 </script>
 
-
 <script type="module">
   import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
   mermaid.initialize({
@@ -358,7 +325,7 @@ flowchart TD
       darkMode: true,
       background: 'transparent',
       mainBkg: '#161b22',
-      clusterBkg: '#161b2255',
+      clusterBkg: '#161b2280',
       clusterBorder: '#30363d',
       titleColor: '#e6edf3',
       lineColor: '#58a6ff',
