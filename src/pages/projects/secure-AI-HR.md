@@ -163,6 +163,52 @@ graph TD
     end
 </pre>
 
+<style>
+  /* Fancy container styling */
+  .mermaid-wrapper {
+    background: radial-gradient(circle at 50% 0%, #1c2333 0%, #0d1117 80%);
+    border: 1px solid #30363d;
+    border-radius: 12px;
+    padding: 2.5rem 1.5rem;
+    margin: 2rem 0;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
+    overflow-x: auto;
+  }
+</style>
+
+<div class="mermaid-wrapper">
+<pre class="mermaid">
+flowchart TD
+    %% Base Links & Line Styles
+    linkStyle default stroke:#58a6ff,stroke-width:2px,stroke-dasharray: 0;
+
+    subgraph Attack_Vector [" 🚨 UNTRUSTED INPUT ZONE "]
+        A(["🦹 Malicious Candidate"]):::attacker -->|"📄 Uploads Resume"| B["Hidden Prompt Injection<br/><small style='color:#f85149'>(1pt Invisible Payload)</small>"]:::attackerCard
+    end
+
+    subgraph Trust_Boundary [" 🛡️ DUAL-LLM TRUST BOUNDARY "]
+        B -->|"Raw Untrusted Text"| C{"🧹 Unprivileged LLM<br/><b>Data Sanitizer</b>"}:::sanitizer
+        C ==>|"Strict JSON Schema<br/>(Commands Stripped)"| D["⚖️ Privileged LLM<br/><b>Core Evaluator</b>"]:::evaluator
+    end
+
+    subgraph Execution_Gateway [" ⚡ EXECUTION & ENFORCEMENT "]
+        D -.->|"Attempts Tool Call"| E{{"🪤 Honeypot & HITL Gateway"}}:::gateway
+        E -->|"Action Paused"| F(["🛑 Admin Terminal Confirmation"]):::hitl
+        F -- "❌ Block & Drop" --> G["🛡️ Threat Neutralized"]:::secure
+        F -- "✔️ Authorized" --> H[("🗄️ Live HR Database")]:::database
+    end
+
+    %% Class Definitions with Modern Glow & Palette
+    classDef attacker fill:#2b1016,stroke:#f85149,stroke-width:2px,color:#ff7b72,font-weight:bold;
+    classDef attackerCard fill:#1f1315,stroke:#da3633,stroke-width:1.5px,stroke-dasharray: 4 4,color:#ffa198;
+    classDef sanitizer fill:#1a102f,stroke:#bc8cff,stroke-width:2px,color:#d2a8ff,font-weight:bold;
+    classDef evaluator fill:#0c213b,stroke:#388bfd,stroke-width:2px,color:#79c0ff,font-weight:bold;
+    classDef gateway fill:#2e1f04,stroke:#d29922,stroke-width:2px,color:#e3b341,font-weight:bold;
+    classDef hitl fill:#211824,stroke:#f0883e,stroke-width:2px,color:#ffa657,font-weight:bold;
+    classDef secure fill:#0d281e,stroke:#238636,stroke-width:2px,color:#56d364,font-weight:bold;
+    classDef database fill:#161b22,stroke:#8b949e,stroke-width:2px,color:#c9d1d9;
+</pre>
+</div>
 
 
 ## MITRE ATLAS Threat Analysis
@@ -302,7 +348,22 @@ graph TD
   });
 </script>
 
+
 <script type="module">
   import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
-  mermaid.initialize({ startOnLoad: true, theme: 'dark' });
+  mermaid.initialize({
+    startOnLoad: true,
+    theme: 'base',
+    themeVariables: {
+      darkMode: true,
+      background: 'transparent',
+      mainBkg: '#161b22',
+      clusterBkg: '#161b2255',
+      clusterBorder: '#30363d',
+      titleColor: '#e6edf3',
+      lineColor: '#58a6ff',
+      textColor: '#e6edf3',
+      fontFamily: 'ui-sans-serif, system-ui, sans-serif'
+    }
+  });
 </script>
