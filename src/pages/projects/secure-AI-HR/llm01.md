@@ -3,7 +3,7 @@ layout: ../../../layouts/ProjectLayout.astro
 title: "LLM01: Prompt Injection"
 breadcrumb: "< cd ~/home/secure-AI-HR"
 breadcrumbLink: "/projects/secure-AI-HR/"
-videoLink: "https://www.youtube.com/playlist?list=PLX4gCcEM7rG4"
+videoLink: "https://www.youtube.com/watch?v=jrVPF8o7IAg"
 githubLink: "https://github.com/varkeymjohn/secure-AI-HR-agent/tree/llm01-2025-attack"
 ---
 
