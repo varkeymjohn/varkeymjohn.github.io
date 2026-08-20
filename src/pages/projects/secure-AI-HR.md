@@ -129,6 +129,117 @@ Most AI resume screeners simply pass candidate PDFs to an LLM, making them highl
   </a>
 -->
 </div>
+```html
+## MITRE ATLAS Threat Analysis
+
+<style>
+  .threat-chain {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin: 2rem 0;
+    position: relative;
+  }
+  
+  /* Vertical connecting line */
+  .threat-chain::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 24px;
+    width: 2px;
+    background-color: #30363d;
+    z-index: 0;
+  }
+
+  .threat-step {
+    background-color: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-left: 48px; /* Room for the connecting line */
+    position: relative;
+    color: #c9d1d9;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    z-index: 1;
+  }
+
+  /* Node circles on the connecting line */
+  .threat-step::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -30px;
+    transform: translateY(-50%);
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #161b22;
+    border: 2px solid #30363d;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+  }
+
+  .threat-step:hover {
+    transform: translateX(8px);
+    border-color: #f85149;
+    box-shadow: 0 4px 12px rgba(248, 81, 73, 0.15);
+  }
+
+  .threat-step:hover::before {
+    border-color: #f85149;
+    background-color: #f85149;
+  }
+
+  .threat-id {
+    font-size: 0.85rem;
+    font-family: monospace;
+    color: #f85149;
+    margin-bottom: 0.25rem;
+    display: block;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  .threat-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0 0 0.5rem 0;
+    color: #ffffff;
+  }
+
+  .threat-desc {
+    font-size: 0.95rem;
+    margin: 0;
+    line-height: 1.5;
+  }
+</style>
+
+<div class="threat-chain">
+  <div class="threat-step">
+    <span class="threat-id">Initial Access (AML.T0051.001)</span>
+    <h3 class="threat-title">Indirect Prompt Injection</h3>
+    <p class="threat-desc">Attackers embed hidden instructions into uploaded candidate PDF resumes. When the backend parses the document, the payload is fed directly into the LLM.</p>
+  </div>
+
+  <div class="threat-step">
+    <span class="threat-id">Defense Evasion</span>
+    <h3 class="threat-title">Stealth Formatting</h3>
+    <p class="threat-desc">Malicious instructions are concealed using 1pt font size and white text, making the exploit invisible to human HR recruiters reviewing the document.</p>
+  </div>
+
+  <div class="threat-step">
+    <span class="threat-id">Execution (AML.T0053)</span>
+    <h3 class="threat-title">AI Agent Tool Invocation</h3>
+    <p class="threat-desc">The injected prompt hijacks the LLM's goal hierarchy, bypassing standard resume evaluation and forcing the agent to invoke the `terminate_employee` system tool.</p>
+  </div>
+
+  <div class="threat-step">
+    <span class="threat-id">Impact</span>
+    <h3 class="threat-title">Unauthorized System Manipulation</h3>
+    <p class="threat-desc">Due to Excessive Agency, the vulnerable agent executes the tool autonomously, altering the live HR database without human verification.</p>
+  </div>
+</div>
 
 <!-- Inline script guarantees execution inside Markdown pages -->
 <script is:inline>
