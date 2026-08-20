@@ -4,7 +4,7 @@ title: "LLM03: Excessive Agency"
 breadcrumb: "< cd ~/home/secure-AI-HR"
 breadcrumbLink: "/projects/secure-AI-HR/"
 videoLink: "https://www.youtube.com/playlist?list=PLX4gCcEM7rG4"
-githubLink: "https://github.com/varkeymjohn/secure-AI-HR-agent/tree/llm03-2025-attack"
+githubLink: "https://github.com/varkeymjohn/secure-AI-HR-agent/tree/llm03-2026"
 ---
 
 # LLM03: Excessive Agency
