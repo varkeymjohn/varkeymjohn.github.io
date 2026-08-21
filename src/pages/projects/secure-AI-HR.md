@@ -86,68 +86,82 @@ Most AI resume screeners simply pass candidate PDFs to an LLM, making them highl
   <img src="/architecture.svg" alt="System Architecture and Defense Mechanisms" style="width: 80%; height: auto; display: block;" />
 </div>
 
----
 ## MITRE ATLAS Threat Analysis
 
 <style>
-  .threat-chain {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    margin: 2rem 0;
+  .timeline-container {
     position: relative;
+    max-width: 900px;
+    margin: 3rem auto;
+    padding: 1rem 0;
   }
-  
-  .threat-chain::before {
+
+  /* Center Vertical Line */
+  .timeline-container::before {
     content: '';
     position: absolute;
     top: 0;
     bottom: 0;
-    left: 24px;
+    left: 50%;
     width: 2px;
     background-color: #30363d;
+    transform: translateX(-50%);
     z-index: 0;
   }
 
-  .threat-step {
-    background-color: #161b22;
-    border: 1px solid #30363d;
-    border-radius: 8px;
-    padding: 1.5rem;
-    margin-left: 48px;
+  .timeline-item {
     position: relative;
-    color: #c9d1d9;
-    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
-    z-index: 1;
+    width: 50%;
+    padding: 0.75rem 2rem;
+    box-sizing: border-box;
   }
 
-  .threat-step::before {
+  /* Alternating Left and Right */
+  .timeline-item.left {
+    left: 0;
+    text-align: right;
+  }
+
+  .timeline-item.right {
+    left: 50%;
+    text-align: left;
+  }
+
+  /* Center Nodes/Dots */
+  .timeline-item::after {
     content: '';
     position: absolute;
-    top: 50%;
-    left: -30px;
-    transform: translateY(-50%);
+    top: 24px;
     width: 12px;
     height: 12px;
     border-radius: 50%;
     background-color: #161b22;
     border: 2px solid #30363d;
-    transition: border-color 0.3s ease, background-color 0.3s ease;
+    z-index: 2;
+    transition: border-color 0.3s ease, background-color 0.3s ease, transform 0.3s ease;
   }
 
-  .threat-step:hover {
-    transform: translateX(8px);
-    border-color: #f85149;
-    box-shadow: 0 4px 12px rgba(248, 81, 73, 0.15);
+  .timeline-item.left::after {
+    right: -7px;
   }
 
-  .threat-step:hover::before {
-    border-color: #f85149;
-    background-color: #f85149;
+  .timeline-item.right::after {
+    left: -7px;
+  }
+
+  /* Threat Card */
+  .threat-card {
+    background-color: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 8px;
+    padding: 1.25rem 1.5rem;
+    color: #c9d1d9;
+    cursor: pointer;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
   }
 
   .threat-id {
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     font-family: monospace;
     color: #f85149;
     margin-bottom: 0.25rem;
@@ -155,44 +169,121 @@ Most AI resume screeners simply pass candidate PDFs to an LLM, making them highl
     font-weight: bold;
     text-transform: uppercase;
   }
-  
+
   .threat-title {
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     font-weight: 600;
-    margin: 0 0 0.5rem 0;
+    margin: 0;
     color: #ffffff;
   }
 
+  /* Expandable Description */
+  .threat-desc-wrapper {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
   .threat-desc {
-    font-size: 0.95rem;
-    margin: 0;
+    overflow: hidden;
+    font-size: 0.9rem;
     line-height: 1.5;
+    color: #8b949e;
+    margin: 0;
+    padding-top: 0;
+    transition: padding-top 0.35s ease, color 0.3s ease;
+  }
+
+  /* Hover States */
+  .timeline-item:hover .threat-card {
+    border-color: #f85149;
+    box-shadow: 0 4px 16px rgba(248, 81, 73, 0.15);
+  }
+
+  .timeline-item.left:hover .threat-card {
+    transform: translateX(-4px);
+  }
+
+  .timeline-item.right:hover .threat-card {
+    transform: translateX(4px);
+  }
+
+  .timeline-item:hover::after {
+    border-color: #f85149;
+    background-color: #f85149;
+    transform: scale(1.2);
+  }
+
+  .timeline-item:hover .threat-desc-wrapper {
+    grid-template-rows: 1fr;
+  }
+
+  .timeline-item:hover .threat-desc {
+    padding-top: 0.75rem;
+    color: #c9d1d9;
+  }
+
+  /* Responsive Fallback for Narrow Screens */
+  @media (max-width: 640px) {
+    .timeline-container::before {
+      left: 20px;
+    }
+    .timeline-item {
+      width: 100%;
+      left: 0 !important;
+      padding-left: 3rem;
+      padding-right: 0.5rem;
+      text-align: left !important;
+    }
+    .timeline-item::after {
+      left: 14px !important;
+      right: auto !important;
+    }
+    .timeline-item:hover .threat-card {
+      transform: translateX(4px) !important;
+    }
   }
 </style>
 
-<div class="threat-chain">
-  <div class="threat-step">
-    <span class="threat-id">Initial Access (AML.T0051.001)</span>
-    <h3 class="threat-title">Indirect Prompt Injection</h3>
-    <p class="threat-desc">Attackers embed hidden instructions into uploaded candidate PDF resumes. When the backend parses the document, the payload is fed directly into the LLM.</p>
+<div class="timeline-container">
+  <div class="timeline-item left">
+    <div class="threat-card">
+      <span class="threat-id">Initial Access (AML.T0051.001)</span>
+      <h3 class="threat-title">Indirect Prompt Injection</h3>
+      <div class="threat-desc-wrapper">
+        <p class="threat-desc">Attackers embed hidden instructions into uploaded candidate PDF resumes. When the backend parses the document, the payload is fed directly into the LLM.</p>
+      </div>
+    </div>
   </div>
 
-  <div class="threat-step">
-    <span class="threat-id">Defense Evasion</span>
-    <h3 class="threat-title">Stealth Formatting</h3>
-    <p class="threat-desc">Malicious instructions are concealed using 1pt font size and white text, making the exploit invisible to human HR recruiters reviewing the document.</p>
+  <div class="timeline-item right">
+    <div class="threat-card">
+      <span class="threat-id">Defense Evasion</span>
+      <h3 class="threat-title">Stealth Formatting</h3>
+      <div class="threat-desc-wrapper">
+        <p class="threat-desc">Malicious instructions are concealed using 1pt font size and white text, making the exploit invisible to human HR recruiters reviewing the document.</p>
+      </div>
+    </div>
   </div>
 
-  <div class="threat-step">
-    <span class="threat-id">Execution (AML.T0053)</span>
-    <h3 class="threat-title">AI Agent Tool Invocation</h3>
-    <p class="threat-desc">The injected prompt hijacks the LLM's goal hierarchy, bypassing standard resume evaluation and forcing the agent to invoke the `terminate_employee` system tool.</p>
+  <div class="timeline-item left">
+    <div class="threat-card">
+      <span class="threat-id">Execution (AML.T0053)</span>
+      <h3 class="threat-title">AI Agent Tool Invocation</h3>
+      <div class="threat-desc-wrapper">
+        <p class="threat-desc">The injected prompt hijacks the LLM's goal hierarchy, bypassing standard resume evaluation and forcing the agent to invoke the `terminate_employee` system tool.</p>
+      </div>
+    </div>
   </div>
 
-  <div class="threat-step">
-    <span class="threat-id">Impact</span>
-    <h3 class="threat-title">Unauthorized System Manipulation</h3>
-    <p class="threat-desc">Due to Excessive Agency, the vulnerable agent executes the tool autonomously, altering the live HR database without human verification.</p>
+  <div class="timeline-item right">
+    <div class="threat-card">
+      <span class="threat-id">Impact</span>
+      <h3 class="threat-title">Unauthorized System Manipulation</h3>
+      <div class="threat-desc-wrapper">
+        <p class="threat-desc">Due to Excessive Agency, the vulnerable agent executes the tool autonomously, altering the live HR database without human verification.</p>
+      </div>
+    </div>
   </div>
 </div>
 
